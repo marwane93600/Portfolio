@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Marwane El Bachir — Portfolio Data</title>
+  <style>
+    :root {
+      --bg: #0d1117;
+      --bg2: #161b22;
+      --bg3: #21262d;
+      --accent: #58a6ff;
+      --accent2: #7ee787;
+      --accent3: #bc8cff;
+      --text: #e6edf3;
+      --text2: #8b949e;
+      --border: #30363d;
+      --card-hover: #1c2128;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed; top: 0; width: 100%; z-index: 100;
+      background: rgba(13,17,23,0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 60px;
+    }
+    .nav-logo {
+      font-weight: 700; font-size: 1rem; color: var(--accent);
+      letter-spacing: 0.5px;
+    }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      color: var(--text2); text-decoration: none; font-size: 0.875rem;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--text); }
+
+    /* ─── HERO ─── */
+    .hero {
+      min-height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+      padding: 80px 2rem 2rem;
+      position: relative; overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0; z-index: 0;
+      background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(88,166,255,0.12), transparent),
+                  radial-gradient(ellipse 60% 40% at 80% 80%, rgba(188,140,255,0.08), transparent);
+    }
+    .hero-content { position: relative; z-index: 1; text-align: center; max-width: 700px; }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(88,166,255,0.1);
+      border: 1px solid rgba(88,166,255,0.3);
+      color: var(--accent); border-radius: 999px;
+      padding: 0.3rem 1rem; font-size: 0.8rem;
+      margin-bottom: 1.5rem; letter-spacing: 0.5px;
+    }
+    .hero h1 {
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      font-weight: 800; line-height: 1.15;
+      margin-bottom: 0.5rem;
+    }
+    .hero h1 span { color: var(--accent); }
+    .hero-sub {
+      font-size: 1.15rem; color: var(--text2);
+      margin-bottom: 0.75rem;
+    }
+    .hero-desc {
+      font-size: 0.95rem; color: var(--text2);
+      max-width: 520px; margin: 0 auto 2rem;
+    }
+    .hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      padding: 0.65rem 1.4rem; border-radius: 8px;
+      font-size: 0.875rem; font-weight: 600;
+      text-decoration: none; transition: all 0.2s; cursor: pointer;
+    }
+    .btn-primary {
+      background: var(--accent); color: #0d1117;
+    }
+    .btn-primary:hover { background: #79b8ff; transform: translateY(-1px); }
+    .btn-outline {
+      border: 1px solid var(--border); color: var(--text);
+      background: transparent;
+    }
+    .btn-outline:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); }
+
+    /* ─── SECTIONS ─── */
+    section { padding: 80px 2rem; }
+    .section-inner { max-width: 900px; margin: 0 auto; }
+    .section-title {
+      font-size: 1.6rem; font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    .section-title span { color: var(--accent); }
+    .section-line {
+      width: 40px; height: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--accent3));
+      border-radius: 2px; margin-bottom: 2.5rem;
+    }
+
+    /* ─── ABOUT ─── */
+    #about { background: var(--bg2); }
+    .about-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;
+      align-items: center;
+    }
+    .about-text p { color: var(--text2); margin-bottom: 1rem; font-size: 0.95rem; }
+    .about-text strong { color: var(--text); }
+    .about-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.5rem; }
+    .tag {
+      background: var(--bg3); border: 1px solid var(--border);
+      color: var(--text2); padding: 0.25rem 0.75rem;
+      border-radius: 6px; font-size: 0.8rem;
+    }
+    .about-stats { display: flex; flex-direction: column; gap: 1.5rem; }
+    .stat-card {
+      background: var(--bg3); border: 1px solid var(--border);
+      border-radius: 12px; padding: 1.25rem 1.5rem;
+    }
+    .stat-num { font-size: 2rem; font-weight: 800; color: var(--accent); }
+    .stat-label { color: var(--text2); font-size: 0.85rem; }
+
+    /* ─── SKILLS ─── */
+    .skills-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .skill-group {
+      background: var(--bg2); border: 1px solid var(--border);
+      border-radius: 12px; padding: 1.5rem;
+    }
+    .skill-group h3 {
+      font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;
+      color: var(--accent); margin-bottom: 1.25rem;
+    }
+    .skill-item { margin-bottom: 1rem; }
+    .skill-header { display: flex; justify-content: space-between; margin-bottom: 0.4rem; }
+    .skill-name { font-size: 0.875rem; color: var(--text); }
+    .skill-pct { font-size: 0.75rem; color: var(--text2); }
+    .skill-bar { height: 5px; background: var(--bg3); border-radius: 3px; overflow: hidden; }
+    .skill-fill {
+      height: 100%; border-radius: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--accent3));
+      transition: width 1s ease;
+    }
+
+    /* ─── PROJECTS ─── */
+    #projects { background: var(--bg2); }
+    .projects-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+      gap: 1.5rem;
+    }
+    .project-card {
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: 12px; padding: 1.5rem;
+      transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+      display: flex; flex-direction: column;
+    }
+    .project-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(88,166,255,0.1);
+    }
+    .project-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.75rem; }
+    .project-icon { font-size: 1.5rem; }
+    .project-stars { color: #e3b341; font-size: 0.75rem; }
+    .project-title { font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .project-desc { color: var(--text2); font-size: 0.875rem; flex: 1; margin-bottom: 1rem; }
+    .project-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1rem; }
+    .project-tag {
+      background: rgba(88,166,255,0.1); border: 1px solid rgba(88,166,255,0.2);
+      color: var(--accent); padding: 0.2rem 0.6rem;
+      border-radius: 5px; font-size: 0.75rem; font-weight: 500;
+    }
+    .project-tag.green {
+      background: rgba(126,231,135,0.1); border-color: rgba(126,231,135,0.2);
+      color: var(--accent2);
+    }
+    .project-tag.purple {
+      background: rgba(188,140,255,0.1); border-color: rgba(188,140,255,0.2);
+      color: var(--accent3);
+    }
+    .project-footer { display: flex; justify-content: space-between; align-items: center; }
+    .project-lang { font-size: 0.75rem; color: var(--text2); display: flex; align-items: center; gap: 0.3rem; }
+    .lang-dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+    .lang-python { background: #3572A5; }
+    .lang-r { background: #198CE7; }
+    .lang-c { background: #555555; }
+
+    /* ─── CONTACT ─── */
+    .contact-card {
+      background: var(--bg2); border: 1px solid var(--border);
+      border-radius: 16px; padding: 3rem;
+      text-align: center; max-width: 600px; margin: 0 auto;
+    }
+    .contact-card h3 { font-size: 1.3rem; margin-bottom: 0.75rem; }
+    .contact-card p { color: var(--text2); margin-bottom: 2rem; font-size: 0.95rem; }
+    .contact-links { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+    .contact-link {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: var(--bg3); border: 1px solid var(--border);
+      color: var(--text); padding: 0.7rem 1.4rem;
+      border-radius: 8px; text-decoration: none; font-size: 0.875rem;
+      transition: all 0.2s;
+    }
+    .contact-link:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* ─── FOOTER ─── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 1.5rem 2rem;
+      text-align: center; color: var(--text2); font-size: 0.8rem;
+    }
+
+    /* ─── ANIMATIONS ─── */
+    .fade-in {
+      opacity: 0; transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    /* ─── SKILL ITEM CLICKABLE ─── */
+    .skill-item { cursor: pointer; border-radius: 6px; padding: 4px 6px; margin: 0 -6px 0.75rem; transition: background 0.15s; }
+    .skill-item:hover { background: rgba(88,166,255,0.06); }
+    .skill-item:hover .skill-name { color: var(--accent); }
+
+    /* ─── SKILL TOOLTIP POPUP ─── */
+    .skill-popup {
+      display: none; position: fixed; z-index: 998;
+      background: var(--bg2); border: 1px solid var(--accent);
+      border-radius: 10px; padding: 1rem 1.25rem;
+      max-width: 280px; box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+      animation: modalIn 0.18s ease;
+    }
+    .skill-popup.open { display: block; }
+    .skill-popup-title { font-size: 0.875rem; font-weight: 700; color: var(--accent); margin-bottom: 0.4rem; }
+    .skill-popup-text { font-size: 0.8rem; color: var(--text2); line-height: 1.5; }
+    .skill-popup-close {
+      position: absolute; top: 0.4rem; right: 0.5rem;
+      background: none; border: none; color: var(--text2);
+      cursor: pointer; font-size: 0.9rem; padding: 0.2rem 0.4rem;
+    }
+
+    /* ─── PROJECT CARD CLICKABLE ─── */
+    .project-card { cursor: pointer; }
+    .project-card .project-footer::after {
+      content: "Voir les détails →";
+      font-size: 0.75rem; color: var(--accent);
+      opacity: 0; transition: opacity 0.2s;
+    }
+    .project-card:hover .project-footer::after { opacity: 1; }
+
+    /* ─── MODAL ─── */
+    .modal-overlay {
+      display: none; position: fixed; inset: 0; z-index: 999;
+      background: rgba(0,0,0,0.75); backdrop-filter: blur(4px);
+      align-items: center; justify-content: center; padding: 1rem;
+    }
+    .modal-overlay.open { display: flex; }
+    .modal {
+      background: var(--bg2); border: 1px solid var(--border);
+      border-radius: 16px; width: 100%; max-width: 640px;
+      max-height: 90vh; overflow-y: auto;
+      animation: modalIn 0.25s ease;
+    }
+    @keyframes modalIn {
+      from { opacity: 0; transform: scale(0.95) translateY(10px); }
+      to   { opacity: 1; transform: scale(1) translateY(0); }
+    }
+    .modal-header {
+      display: flex; justify-content: space-between; align-items: flex-start;
+      padding: 1.5rem 1.5rem 0;
+    }
+    .modal-title { font-size: 1.15rem; font-weight: 700; }
+    .modal-close {
+      background: var(--bg3); border: 1px solid var(--border);
+      color: var(--text2); width: 30px; height: 30px;
+      border-radius: 6px; cursor: pointer; font-size: 1rem;
+      display: flex; align-items: center; justify-content: center;
+      transition: all 0.2s; flex-shrink: 0;
+    }
+    .modal-close:hover { border-color: var(--accent); color: var(--accent); }
+    .modal-body { padding: 1.25rem 1.5rem 1.5rem; }
+    .modal-section { margin-bottom: 1.25rem; }
+    .modal-section-title {
+      font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px;
+      color: var(--accent); margin-bottom: 0.5rem;
+    }
+    .modal-section p { color: var(--text2); font-size: 0.875rem; line-height: 1.6; }
+    .modal-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .modal-results {
+      background: var(--bg3); border: 1px solid var(--border);
+      border-radius: 8px; padding: 1rem;
+      font-size: 0.875rem; color: var(--text2); line-height: 1.7;
+    }
+    .modal-results strong { color: var(--accent2); }
+    .modal-github {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      background: var(--bg3); border: 1px solid var(--border);
+      color: var(--text); padding: 0.5rem 1rem;
+      border-radius: 7px; text-decoration: none; font-size: 0.8rem;
+      transition: all 0.2s; margin-top: 0.5rem;
+    }
+    .modal-github:hover { border-color: var(--accent); color: var(--accent); }
+
+    @media (max-width: 700px) {
+      .about-grid { grid-template-columns: 1fr; }
+      .projects-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ─── NAV ─── -->
+<nav>
+  <div class="nav-logo">Marwane El Bachir</div>
+  <ul class="nav-links">
+    <li><a href="#about">À propos</a></li>
+    <li><a href="#skills">Compétences</a></li>
+    <li><a href="#projects">Projets</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- ─── HERO ─── -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content fade-in">
+    <div class="hero-badge">🎓 L3 CMI Data Science — Université Paris Nanterre</div>
+    <h1>Marwane <span>El Bachir</span></h1>
+    <p class="hero-sub">Data Analyst · Big Data · Économétrie</p>
+    <p class="hero-desc">
+      Passionné par la donnée, je transforme des jeux de données complexes
+      en insights actionnables — de l'analyse exploratoire aux modèles causaux.<br>
+      <span style="color:var(--accent2);font-size:0.85rem;">🔍 Recherche stage 2 mois (juin 2026) + alternance Data Analyst 2026–2028 · Île-de-France</span>
+    </p>
+    <div class="hero-btns">
+      <a href="#projects" class="btn btn-primary">Voir mes projets →</a>
+      <a href="#contact" class="btn btn-outline">Me contacter</a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── ABOUT ─── -->
+<section id="about">
+  <div class="section-inner">
+    <div class="section-title fade-in">À <span>propos</span></div>
+    <div class="section-line fade-in"></div>
+    <div class="about-grid fade-in">
+      <div class="about-text">
+        <p>
+          Étudiant en <strong>L3 CMI Data Science</strong> à l'Université Paris Nanterre,
+          après une L1 Économie à Paris 1 Panthéon-Sorbonne. Je me spécialise dans
+          l'analyse de données, la modélisation statistique et les pipelines de données.
+        </p>
+        <p>
+          Mon parcours combine une solide culture économique et des compétences techniques
+          en C, R, Python, SQL, Power BI et QGIS — des données brutes jusqu'à la visualisation
+          et l'aide à la décision.
+        </p>
+        <p>
+          Je recherche un <strong>stage de 2 mois à partir de juin 2026</strong>, puis une
+          <strong>alternance Data Analyst 2026–2028</strong> en Île-de-France.
+          Permis B · Mobile.
+        </p>
+        <div class="about-tags">
+          <span class="tag">C</span>
+          <span class="tag">R</span>
+          <span class="tag">Python</span>
+          <span class="tag">SQL</span>
+          <span class="tag">Java</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">Power BI</span>
+          <span class="tag">QGIS</span>
+          <span class="tag">SAS</span>
+          <span class="tag">Excel</span>
+          <span class="tag">LaTeX</span>
+          <span class="tag">Économétrie</span>
+          <span class="tag">SIG / Spatial</span>
+          <span class="tag">IA / Prompt Engineering</span>
+        </div>
+      </div>
+      <div class="about-stats">
+        <div class="stat-card">
+          <div class="stat-num">8</div>
+          <div class="stat-label">Projets data réalisés</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">6+</div>
+          <div class="stat-label">Langages (C · R · Python · SQL · Java · JS)</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">L3 CMI</div>
+          <div class="stat-label">Data Science — Paris Nanterre</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── SKILLS ─── -->
+<section id="skills">
+  <div class="section-inner">
+    <div class="section-title fade-in">Compé<span>tences</span></div>
+    <div class="section-line fade-in"></div>
+    <div class="skills-grid fade-in">
+
+      <div class="skill-group" data-group="langages">
+        <h3>Langages</h3>
+        <div class="skill-item" data-skill="C" data-info="Mon langage le plus maîtrisé. Utilisé pour implémenter et benchmarker des algorithmes de tri (tri à bulle, cocktail…) avec mesure précise des temps d'exécution.">
+          <div class="skill-header"><span class="skill-name">C</span><span class="skill-pct">78%</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="width:78%"></div></div>
+        </div>
+        <div class="skill-item" data-skill="R / R Markdown" data-info="Très utilisé dans mes projets data : analyses statistiques, économétrie (DiD), cartographie spatiale, visualisation avec ggplot2, rapports R Markdown.">
+          <div class="skill-header"><span class="skill-name">R / R Markdown</span><span class="skill-pct">78%</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="width:78%"></div></div>
+        </div>
+        <div class="skill-item" data-skill="Python" data-info="Utilisé pour des pipelines de données, analyse de sentiment (NLP), scripts d'automatisation et visualisation. Moins à l'aise qu'en C mais compétent sur les projets data.">
+          <div class="skill-header"><span class="skill-name">Python</span><span class="skill-pct">62%</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="width:62%"></div></div>
+        </div>
+        <div class="skill-item" data-skill="SQL" data-info="Notions acquises en cours : requêtes SELECT, JOIN, GROUP BY, filtres. Capable de lire et interroger des tables pour mes projets.">
+          <div class="skill-header"><span class="skill-name">SQL</span><span class="skill-pct">45%</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="width:45%"></div></div>
+        </div>
+        <div class="skill-item" data-skill="Java" data-info="Bases acquises en cours. Notions de programmation orientée objet, structures de données fondamentales.">
+          <div class="skill-header"><span class="skill-name">Java</span><span class="skill-pct">38%</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="width:38%"></div></div>
+        </div>
+      </div>
+
+      <div class="skill-group" data-group="outils">
+        <h3>Librairies & Outils</h3>
+        <div class="skill-item" data-skill="ggplot2 · tidyverse · sf" data-info="Librairies R au cœur de mes projets : visualisation avancée, manipulation de données tabulaires et géospatiales (sf pour les shapefiles et jointures spatiales).">
+          <div class="skill-header"><span class="skill-name">ggplot2 · tidyverse · sf</span><span class="skill-pct">80%</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
+        </div>
+        <div class="skill-item" data-skill="LaTeX · Beamer · RMarkdown" data-info="Rédaction de rapports scientifiques et de présentations (Beamer) en LaTeX. Utilisé dans plusieurs projets pour les rapports finaux et les slides.">
+          <div class="skill-header"><span class="skill-name">LaTeX · Beamer · RMarkdown</span><span class="skill-pct">76%</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="width:76%"></div></div>
+        </div>
+        <div class="skill-item" data-skill="fixest · stargazer · did" data-info="Librairies R pour l'économétrie : fixest pour les régressions à effets fixes, stargazer pour les tableaux de résultats, did/staggered pour les DiD hétérogènes.">
+          <div class="skill-header"><span class="skill-name">fixest · stargazer · did</span><span class="skill-pct">72%</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="width:72%"></div></div>
+        </div>
+        <div class="skill-item" data-skill="pandas · numpy · matplotlib" data-info="Librairies Python pour la manipulation et visualisation de données. Utilisées dans le projet d'analyse de sentiment et de benchmarking.">
+          <div class="skill-header"><span class="skill-name">pandas · numpy · matplotlib</span><span class="skill-pct">62%</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="width:62%"></div></div>
+        </div>
+        <div class="skill-item" data-skill="Git" data-info="Gestion de versions : commits, branches, GitHub. Utilisé pour versionner mes projets et collaborer.">
+          <div class="skill-header"><span class="skill-name">Git</span><span class="skill-pct">65%</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="width:65%"></div></div>
+        </div>
+        <div class="skill-item" data-skill="Excel · Pack Office" data-info="Notions pratiques : lecture et manipulation de tableaux, formules de base, mise en forme. Utilisé pour explorer des données dans mes projets.">
+          <div class="skill-header"><span class="skill-name">Excel · Pack Office</span><span class="skill-pct">48%</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="width:48%"></div></div>
+        </div>
+        <div class="skill-item" data-skill="Power BI · QGIS · SAS" data-info="Notions de base acquises en cours : initiation à Power BI (tableaux de bord simples), QGIS pour la visualisation spatiale, SAS pour le traitement statistique. En cours d'approfondissement.">
+          <div class="skill-header"><span class="skill-name">Power BI · QGIS · SAS</span><span class="skill-pct">28%</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="width:28%"></div></div>
+        </div>
+      </div>
+
+      <div class="skill-group" data-group="domaines">
+        <h3>Domaines & Savoir-faire</h3>
+        <div class="skill-item" data-skill="Analyse & visualisation de données" data-info="Cœur de mes projets : exploration, nettoyage, transformation et représentation graphique de données réelles (pollution, immobilier, marchés financiers).">
+          <div class="skill-header"><span class="skill-name">Analyse & visualisation</span><span class="skill-pct">82%</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="width:82%"></div></div>
+        </div>
+        <div class="skill-item" data-skill="Statistiques & économétrie" data-info="Régression linéaire, DiD, modèles à effets fixes, analyse causale. Appliqués sur des données réelles dans plusieurs projets universitaires.">
+          <div class="skill-header"><span class="skill-name">Statistiques & économétrie</span><span class="skill-pct">78%</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="width:78%"></div></div>
+        </div>
+        <div class="skill-item" data-skill="IA & Prompt Engineering" data-info="À l'aise avec les LLMs (ChatGPT, Claude, Copilot) : formulation de prompts efficaces, utilisation de l'IA comme outil de productivité dans les projets data et code.">
+          <div class="skill-header"><span class="skill-name">IA & Prompt Engineering</span><span class="skill-pct">72%</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="width:72%"></div></div>
+        </div>
+        <div class="skill-item" data-skill="Données géospatiales (SIG)" data-info="Traitement de shapefiles, jointures spatiales, cartographie thématique avec sf, geodata et rnaturalearth. Mis en pratique sur deux projets R.">
+          <div class="skill-header"><span class="skill-name">Données géospatiales (SIG)</span><span class="skill-pct">68%</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="width:68%"></div></div>
+        </div>
+        <div class="skill-item" data-skill="Adaptabilité aux nouvelles techs" data-info="Capacité à apprendre rapidement de nouveaux outils, librairies et technologies. Autonomie dans l'auto-formation (documentation, tutoriels, IA).">
+          <div class="skill-header"><span class="skill-name">Adaptabilité / Nouvelles techs</span><span class="skill-pct">85%</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── PROJECTS ─── -->
+<section id="projects">
+  <div class="section-inner">
+    <div class="section-title fade-in">Mes <span>projets</span></div>
+    <div class="section-line fade-in"></div>
+    <div class="projects-grid fade-in">
+
+      <!-- Projet 1 -->
+      <div class="project-card">
+        <div class="project-header">
+          <span class="project-icon">📰</span>
+          <span class="project-stars">★★★ Top projet</span>
+        </div>
+        <div class="project-title">Analyse de Sentiment de Marché</div>
+        <div class="project-desc">
+          Pipeline complet de NLP : récupération d'actualités économiques via NewsAPI,
+          analyse de sentiment (positif/neutre/négatif) avec TextBlob & NLTK,
+          visualisation Matplotlib et export CSV. Conçu pour portfolio CMI D3S Big Data.
+        </div>
+        <div class="project-tags">
+          <span class="project-tag">Python</span>
+          <span class="project-tag">NLP</span>
+          <span class="project-tag">TextBlob</span>
+          <span class="project-tag">pandas</span>
+          <span class="project-tag">API REST</span>
+          <span class="project-tag green">Tests unitaires</span>
+        </div>
+        <div class="project-footer">
+          <div class="project-lang"><span class="lang-dot lang-python"></span> Python</div>
+        </div>
+      </div>
+
+      <!-- Projet 2 -->
+      <div class="project-card">
+        <div class="project-header">
+          <span class="project-icon">🏠</span>
+          <span class="project-stars">★★★ Top projet</span>
+        </div>
+        <div class="project-title">Effet de la Pollution sur les Prix Immobiliers</div>
+        <div class="project-desc">
+          Étude économétrique causale (Difference-in-Differences) de l'impact
+          de la proximité aux installations polluantes sur les transactions immobilières (DVF+).
+          Pipeline en 6 scripts R, matching spatial, estimations avec fixest & did.
+        </div>
+        <div class="project-tags">
+          <span class="project-tag">R</span>
+          <span class="project-tag purple">Économétrie</span>
+          <span class="project-tag purple">DiD</span>
+          <span class="project-tag">sf / SIG</span>
+          <span class="project-tag">fixest</span>
+          <span class="project-tag green">Rapport LaTeX</span>
+        </div>
+        <div class="project-footer">
+          <div class="project-lang"><span class="lang-dot lang-r"></span> R</div>
+        </div>
+      </div>
+
+      <!-- Projet 3 -->
+      <div class="project-card">
+        <div class="project-header">
+          <span class="project-icon">🗺️</span>
+          <span class="project-stars">★★ Bon projet</span>
+        </div>
+        <div class="project-title">Analyse Spatiale Environnementale</div>
+        <div class="project-desc">
+          Analyse géospatiale d'établissements industriels français (émissions, rejets, déchets).
+          Cartographie avec données shapefile Corine Land Cover (CLC12),
+          statistiques descriptives et modélisation avec stargazer.
+        </div>
+        <div class="project-tags">
+          <span class="project-tag">R</span>
+          <span class="project-tag">sf</span>
+          <span class="project-tag">ggplot2</span>
+          <span class="project-tag purple">Géospatial</span>
+          <span class="project-tag">Shapefile</span>
+          <span class="project-tag">arrow / parquet</span>
+        </div>
+        <div class="project-footer">
+          <div class="project-lang"><span class="lang-dot lang-r"></span> R</div>
+        </div>
+      </div>
+
+      <!-- Projet 4 -->
+      <div class="project-card">
+        <div class="project-header">
+          <span class="project-icon">🌫️</span>
+          <span class="project-stars">★★ Bon projet</span>
+        </div>
+        <div class="project-title">Prédiction de la Pollution Atmosphérique</div>
+        <div class="project-desc">
+          Modélisation prédictive des particules fines PM2.5 et PM10 à partir de données
+          OpenAQ (API publique). Nettoyage de données horaires, analyse de corrélation,
+          régression linéaire et cartographie des résultats.
+        </div>
+        <div class="project-tags">
+          <span class="project-tag">R</span>
+          <span class="project-tag">tidyverse</span>
+          <span class="project-tag purple">Régression</span>
+          <span class="project-tag">API OpenAQ</span>
+          <span class="project-tag">corrplot</span>
+          <span class="project-tag green">Cartographie</span>
+        </div>
+        <div class="project-footer">
+          <div class="project-lang"><span class="lang-dot lang-r"></span> R</div>
+        </div>
+      </div>
+
+      <!-- Projet 5 -->
+      <div class="project-card">
+        <div class="project-header">
+          <span class="project-icon">⚖️</span>
+          <span class="project-stars">★★ Bon projet</span>
+        </div>
+        <div class="project-title">Concentration des Marchés — Métaux Critiques</div>
+        <div class="project-desc">
+          Analyse de l'évolution de l'indice HHI (Herfindahl-Hirschman) pour 5 métaux
+          critiques (1994–2020). Visualisation de la concentration et des dynamiques
+          concurrentielles à l'échelle mondiale. Rapport CMI S4 rédigé.
+        </div>
+        <div class="project-tags">
+          <span class="project-tag">R</span>
+          <span class="project-tag">ggplot2</span>
+          <span class="project-tag purple">Économie</span>
+          <span class="project-tag">dplyr</span>
+          <span class="project-tag green">Visualisation</span>
+        </div>
+        <div class="project-footer">
+          <div class="project-lang"><span class="lang-dot lang-r"></span> R</div>
+        </div>
+      </div>
+
+      <!-- Projet 6 -->
+      <div class="project-card">
+        <div class="project-header">
+          <span class="project-icon">🔬</span>
+          <span class="project-stars">★ Projet académique</span>
+        </div>
+        <div class="project-title">Analyseur de Complexité de Code</div>
+        <div class="project-desc">
+          Outil d'analyse statique Python calculant la complexité cyclomatique,
+          la profondeur de nidification et le nombre de lignes de code.
+          Génère des rapports texte automatisés et des suggestions d'amélioration.
+        </div>
+        <div class="project-tags">
+          <span class="project-tag">Python</span>
+          <span class="project-tag">Analyse statique</span>
+          <span class="project-tag">Génie logiciel</span>
+          <span class="project-tag green">Rapport auto</span>
+        </div>
+        <div class="project-footer">
+          <div class="project-lang"><span class="lang-dot lang-python"></span> Python</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── CONTACT ─── -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="section-title fade-in" style="text-align:center">Me <span>contacter</span></div>
+    <div class="section-line fade-in" style="margin:0 auto 2.5rem"></div>
+    <div class="contact-card fade-in">
+      <h3>Disponible pour un stage (juin 2026) et une alternance 2026–2028 📊</h3>
+      <p>
+        Data Analyst · Île-de-France · Ouvert aux opportunités en data, BI, analyse économique ou Big Data.<br>
+        N'hésitez pas à me contacter pour discuter d'un projet ou d'une collaboration.
+      </p>
+      <div class="contact-links">
+        <a href="mailto:melbachir@icloud.com" class="contact-link">
+          ✉️ melbachir@icloud.com
+        </a>
+        <a href="tel:+33767730553" class="contact-link">
+          📞 +33 7 67 73 05 53
+        </a>
+        <a href="https://www.linkedin.com/in/marwane-el-bachir-400b8a389/" target="_blank" class="contact-link">
+          💼 LinkedIn
+        </a>
+        <a href="CV_EL_BACHIR_Marwane.pdf" download class="contact-link">
+          📄 Télécharger mon CV
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── SKILL POPUP ─── -->
+<div class="skill-popup" id="skillPopup">
+  <button class="skill-popup-close" onclick="closeSkillPopup()">✕</button>
+  <div class="skill-popup-title" id="skillPopupTitle"></div>
+  <div class="skill-popup-text" id="skillPopupText"></div>
+</div>
+
+<!-- ─── MODAL ─── -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+  <div class="modal" id="modalBox">
+    <div class="modal-header">
+      <div>
+        <div style="font-size:1.8rem;margin-bottom:0.3rem" id="modalIcon"></div>
+        <div class="modal-title" id="modalTitle"></div>
+      </div>
+      <button class="modal-close" onclick="closeModalDirect()">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-section">
+        <div class="modal-section-title">Description</div>
+        <p id="modalDesc"></p>
+      </div>
+      <div class="modal-section">
+        <div class="modal-section-title">Ce que j'ai fait</div>
+        <div class="modal-results" id="modalResults"></div>
+      </div>
+      <div class="modal-section">
+        <div class="modal-section-title">Technologies utilisées</div>
+        <div class="modal-tags" id="modalTags"></div>
+      </div>
+      <div class="modal-section">
+        <div class="modal-section-title">Compétences démontrées</div>
+        <p id="modalSkills"></p>
+      </div>
+      <a href="https://github.com/ton-pseudo" class="modal-github" id="modalLink" target="_blank" style="opacity:0.5;pointer-events:none;">🔗 GitHub — bientôt disponible</a>
+    </div>
+  </div>
+</div>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <p>© 2026 Marwane El Bachir · L3 CMI Data Science — Université Paris Nanterre · Fait avec ❤️ et beaucoup de data</p>
+</footer>
+
+<!-- ─── JS ─── -->
+<script>
+  // ── Animations au scroll ──
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  const skillObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.querySelectorAll('.skill-fill').forEach(bar => {
+          const w = bar.style.width;
+          bar.style.width = '0';
+          setTimeout(() => { bar.style.width = w; }, 100);
+        });
+      }
+    });
+  }, { threshold: 0.3 });
+  document.querySelectorAll('.skill-group').forEach(el => skillObserver.observe(el));
+
+  // ── Skill item : popup au clic ──
+  let skillPopupOpen = false;
+
+  document.querySelectorAll('.skill-item[data-skill]').forEach(item => {
+    item.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const popup = document.getElementById('skillPopup');
+      const title = item.getAttribute('data-skill');
+      const info  = item.getAttribute('data-info');
+      document.getElementById('skillPopupTitle').textContent = title;
+      document.getElementById('skillPopupText').textContent  = info;
+
+      // Positionnement : à droite du curseur, dans l'écran
+      const x = Math.min(e.clientX + 12, window.innerWidth - 300);
+      const y = Math.min(e.clientY + 12, window.innerHeight - 160);
+      popup.style.left = x + 'px';
+      popup.style.top  = y + 'px';
+      popup.classList.add('open');
+      skillPopupOpen = true;
+    });
+  });
+
+  function closeSkillPopup() {
+    document.getElementById('skillPopup').classList.remove('open');
+    skillPopupOpen = false;
+  }
+  document.addEventListener('click', () => { if (skillPopupOpen) closeSkillPopup(); });
+
+  // ── Données des projets pour la modale ──
+  const projects = [
+    {
+      icon: "📰",
+      title: "Analyse de Sentiment de Marché",
+      desc: "Pipeline NLP complet pour récupérer des actualités économiques en français via l'API NewsAPI, les analyser automatiquement (polarité entre -1 et +1) et classer chaque article en Positif, Neutre ou Négatif. Résultats exportés en CSV et graphique PNG.",
+      results: `<strong>✔ Pipeline end-to-end :</strong> de l'API REST jusqu'au graphique final<br>
+                <strong>✔ Tests unitaires :</strong> couverture avec pytest<br>
+                <strong>✔ Gestion des secrets :</strong> clé API via .env (bonne pratique pro)<br>
+                <strong>✔ Code propre :</strong> README complet, .gitignore, structure modulaire`,
+      tags: ["Python", "NLP", "TextBlob", "NLTK", "pandas", "matplotlib", "requests", "API REST", "pytest", "dotenv"],
+      skills: "Traitement automatique du langage, pipeline de données, bonnes pratiques de développement (tests, gestion des secrets, documentation).",
+      link: "#"
+    },
+    {
+      icon: "🏠",
+      title: "Effet de la Pollution sur les Prix Immobiliers",
+      desc: "Étude économétrique causale utilisant la méthode Difference-in-Differences (DiD) pour mesurer l'impact de la proximité aux installations polluantes sur les prix des transactions immobilières (données DVF+). Pipeline complet en 6 scripts R structurés.",
+      results: `<strong>✔ Pipeline en 6 étapes :</strong> nettoyage → matching spatial → construction de panel → estimations<br>
+                <strong>✔ Méthode avancée :</strong> DiD avec Callaway-Sant'Anna et Sun-Abraham (hétérogénéité)<br>
+                <strong>✔ Données réelles :</strong> transactions immobilières DVF+ + données IREP (établissements)<br>
+                <strong>✔ Rapport complet :</strong> LaTeX + présentation Beamer + PowerPoint`,
+      tags: ["R", "tidyverse", "sf", "fixest", "did", "ggplot2", "LaTeX", "Beamer", "DiD", "Économétrie causale"],
+      skills: "Inférence causale, économétrie avancée, données spatiales, communication scientifique (LaTeX/Beamer), reproductibilité des analyses.",
+      link: "#"
+    },
+    {
+      icon: "🗺️",
+      title: "Analyse Spatiale Environnementale",
+      desc: "Analyse géospatiale complète des établissements industriels français et de leurs impacts environnementaux (émissions, rejets, production de déchets dangereux et non dangereux). Cartographie avec données Corine Land Cover (CLC12) et GADM.",
+      results: `<strong>✔ Données shapefile :</strong> traitement de fichiers géographiques réels (CLC12 France)<br>
+                <strong>✔ Jointures spatiales :</strong> matching entre établissements et zones géographiques<br>
+                <strong>✔ Multiples sources :</strong> émissions, rejets, déchets — consolidation de 6 fichiers CSV<br>
+                <strong>✔ Rapport PDF + présentation PowerPoint</strong>`,
+      tags: ["R", "sf", "ggplot2", "arrow", "parquet", "geodata", "rnaturalearth", "stargazer", "SIG"],
+      skills: "Analyse géospatiale, traitement de données multi-sources, cartographie avec R, modélisation statistique environnementale.",
+      link: "#"
+    },
+    {
+      icon: "🌫️",
+      title: "Prédiction de la Pollution Atmosphérique",
+      desc: "Collecte, nettoyage et modélisation de données de pollution de l'air (PM2.5 et PM10) à Paris, issues de l'API OpenAQ. Analyse temporelle horaire, corrélations entre polluants, régression linéaire et cartographie des résultats.",
+      results: `<strong>✔ Collecte via API :</strong> données horaires OpenAQ (pollution de l'air en temps réel)<br>
+                <strong>✔ Nettoyage complet :</strong> gestion des valeurs manquantes, pivot wide format<br>
+                <strong>✔ Modèle de régression :</strong> prédiction PM2.5 avec résultats illustrés<br>
+                <strong>✔ Cartographie :</strong> visualisation géographique des stations et niveaux de pollution`,
+      tags: ["R", "tidyverse", "lubridate", "httr", "corrplot", "stargazer", "rvest", "gridExtra", "API OpenAQ"],
+      skills: "Collecte de données via API, analyse temporelle, modélisation prédictive, visualisation géographique.",
+      link: "#"
+    },
+    {
+      icon: "⚖️",
+      title: "Concentration des Marchés — Métaux Critiques",
+      desc: "Analyse de l'évolution de l'indice de Herfindahl-Hirschman (HHI) pour 5 métaux critiques (lithium, cobalt, nickel, cuivre, terres rares) sur la période 1994–2020. Étude de la concentration et des dynamiques de marché mondiales.",
+      results: `<strong>✔ Indice HHI :</strong> mesure standard de concentration de marché (utilisé par régulateurs)<br>
+                <strong>✔ Série temporelle :</strong> évolution sur 26 ans pour 5 métaux stratégiques<br>
+                <strong>✔ Enjeux réels :</strong> métaux critiques pour la transition énergétique<br>
+                <strong>✔ Rapport économique rédigé :</strong> analyse et interprétation des résultats`,
+      tags: ["R", "ggplot2", "dplyr", "readr", "Économie industrielle", "Visualisation"],
+      skills: "Analyse économique, visualisation de séries temporelles, interprétation d'indices de marché, rédaction de rapports.",
+      link: "#"
+    },
+    {
+      icon: "🔬",
+      title: "Analyseur de Complexité de Code",
+      desc: "Outil d'analyse statique de code source en Python. Calcule automatiquement trois métriques de qualité logicielle : complexité cyclomatique (branches de décision), profondeur de nidification et nombre de lignes de code effectives.",
+      results: `<strong>✔ 3 métriques :</strong> complexité cyclomatique, nidification, lignes de code<br>
+                <strong>✔ Génération automatique :</strong> rapport texte détaillé par fichier analysé<br>
+                <strong>✔ Suggestions :</strong> recommandations d'amélioration du code<br>
+                <strong>✔ Rapport LaTeX :</strong> documentation complète du projet`,
+      tags: ["Python", "Analyse statique", "Génie logiciel", "Regex", "Automatisation"],
+      skills: "Génie logiciel, métriques de qualité de code, automatisation, compréhension des bonnes pratiques de développement.",
+      link: "#"
+    }
+  ];
+
+  // ── Ouvrir la modale ──
+  document.querySelectorAll('.project-card').forEach((card, i) => {
+    card.addEventListener('click', () => {
+      const p = projects[i];
+      document.getElementById('modalIcon').textContent = p.icon;
+      document.getElementById('modalTitle').textContent = p.title;
+      document.getElementById('modalDesc').textContent = p.desc;
+      document.getElementById('modalResults').innerHTML = p.results;
+      document.getElementById('modalSkills').textContent = p.skills;
+      document.getElementById('modalLink').href = p.link;
+
+      const tagsEl = document.getElementById('modalTags');
+      tagsEl.innerHTML = '';
+      p.tags.forEach(t => {
+        const span = document.createElement('span');
+        span.className = 'project-tag';
+        span.textContent = t;
+        tagsEl.appendChild(span);
+      });
+
+      document.getElementById('modalOverlay').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  function closeModal(e) {
+    if (e.target === document.getElementById('modalOverlay')) closeModalDirect();
+  }
+  function closeModalDirect() {
+    document.getElementById('modalOverlay').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModalDirect(); });
+</script>
+
+</body>
+</html>
