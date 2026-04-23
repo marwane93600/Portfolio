@@ -540,42 +540,17 @@
         </div>
       </div>
 
-      <!-- Projet 2 -->
-      <div class="project-card">
-        <div class="project-header">
-          <span class="project-icon">🏠</span>
-          <span class="project-stars">★★★ Top projet</span>
-        </div>
-        <div class="project-title">Effet de la Pollution sur les Prix Immobiliers</div>
-        <div class="project-desc">
-          Étude économétrique causale (Difference-in-Differences) de l'impact
-          de la proximité aux installations polluantes sur les transactions immobilières (DVF+).
-          Pipeline en 6 scripts R, matching spatial, estimations avec fixest & did.
-        </div>
-        <div class="project-tags">
-          <span class="project-tag">R</span>
-          <span class="project-tag purple">Économétrie</span>
-          <span class="project-tag purple">DiD</span>
-          <span class="project-tag">sf / SIG</span>
-          <span class="project-tag">fixest</span>
-          <span class="project-tag green">Rapport LaTeX</span>
-        </div>
-        <div class="project-footer">
-          <div class="project-lang"><span class="lang-dot lang-r"></span> R</div>
-        </div>
-      </div>
-
-      <!-- Projet 3 -->
+      <!-- Projet 2 — Spatial (1/2) -->
       <div class="project-card">
         <div class="project-header">
           <span class="project-icon">🗺️</span>
-          <span class="project-stars">★★ Bon projet</span>
+          <span class="project-stars">★★★ Série 1/2</span>
         </div>
-        <div class="project-title">Analyse Spatiale Environnementale</div>
+        <div class="project-title">Pollution & Immobilier — Analyse Spatiale <span style="font-size:0.75em;color:var(--accent3);font-weight:600;">(1/2)</span></div>
         <div class="project-desc">
-          Analyse géospatiale d'établissements industriels français (émissions, rejets, déchets).
-          Cartographie avec données shapefile Corine Land Cover (CLC12),
-          statistiques descriptives et modélisation avec stargazer.
+          Cartographie des établissements industriels IREP et de leurs émissions.
+          Résultat clé : les modèles OLS classiques sont <strong>biaisés</strong>
+          (les installations ne sont pas réparties aléatoirement). → <em>Voir suite (2/2)</em>
         </div>
         <div class="project-tags">
           <span class="project-tag">R</span>
@@ -584,6 +559,31 @@
           <span class="project-tag purple">Géospatial</span>
           <span class="project-tag">Shapefile</span>
           <span class="project-tag">arrow / parquet</span>
+        </div>
+        <div class="project-footer">
+          <div class="project-lang"><span class="lang-dot lang-r"></span> R</div>
+        </div>
+      </div>
+
+      <!-- Projet 3 — DiD (2/2) -->
+      <div class="project-card">
+        <div class="project-header">
+          <span class="project-icon">🏠</span>
+          <span class="project-stars">★★★ Série 2/2</span>
+        </div>
+        <div class="project-title">Pollution & Immobilier — Modèle Causal DiD <span style="font-size:0.75em;color:var(--accent2);font-weight:600;">(2/2)</span></div>
+        <div class="project-desc">
+          Suite du projet spatial : application de la méthode
+          <strong>Difference-in-Differences</strong> (Callaway-Sant'Anna) pour estimer
+          causalement l'effet des installations polluantes sur les prix immobiliers (DVF+).
+        </div>
+        <div class="project-tags">
+          <span class="project-tag">R</span>
+          <span class="project-tag purple">Économétrie</span>
+          <span class="project-tag purple">DiD</span>
+          <span class="project-tag">sf / SIG</span>
+          <span class="project-tag">fixest</span>
+          <span class="project-tag green">Rapport LaTeX</span>
         </div>
         <div class="project-footer">
           <div class="project-lang"><span class="lang-dot lang-r"></span> R</div>
@@ -805,28 +805,28 @@
       link: "https://github.com/marwane93600/analyse-sentiment-marche"
     },
     {
-      icon: "🏠",
-      title: "Effet de la Pollution sur les Prix Immobiliers",
-      desc: "Étude économétrique causale utilisant la méthode Difference-in-Differences (DiD) pour mesurer l'impact de la proximité aux installations polluantes sur les prix des transactions immobilières (données DVF+). Pipeline complet en 6 scripts R structurés.",
-      results: `<strong>✔ Pipeline en 6 étapes :</strong> nettoyage → matching spatial → construction de panel → estimations<br>
-                <strong>✔ Méthode avancée :</strong> DiD avec Callaway-Sant'Anna et Sun-Abraham (hétérogénéité)<br>
-                <strong>✔ Données réelles :</strong> transactions immobilières DVF+ + données IREP (établissements)<br>
-                <strong>✔ Rapport complet :</strong> LaTeX + présentation Beamer + PowerPoint`,
-      tags: ["R", "tidyverse", "sf", "fixest", "did", "ggplot2", "LaTeX", "Beamer", "DiD", "Économétrie causale"],
-      skills: "Inférence causale, économétrie avancée, données spatiales, communication scientifique (LaTeX/Beamer), reproductibilité des analyses.",
-      link: "https://github.com/marwane93600"
-    },
-    {
       icon: "🗺️",
-      title: "Analyse Spatiale Environnementale",
-      desc: "Analyse géospatiale complète des établissements industriels français et de leurs impacts environnementaux (émissions, rejets, production de déchets dangereux et non dangereux). Cartographie avec données Corine Land Cover (CLC12) et GADM.",
+      title: "Pollution & Immobilier — Analyse Spatiale (1/2)",
+      desc: "Cartographie des établissements industriels français (IREP) : émissions, rejets, déchets. Résultat clé : les modèles OLS classiques sont biaisés — les installations ne sont pas réparties aléatoirement. Ce constat a motivé la conception d'un modèle causal (voir 2/2).",
       results: `<strong>✔ Données shapefile :</strong> traitement de fichiers géographiques réels (CLC12 France)<br>
                 <strong>✔ Jointures spatiales :</strong> matching entre établissements et zones géographiques<br>
                 <strong>✔ Multiples sources :</strong> émissions, rejets, déchets — consolidation de 6 fichiers CSV<br>
-                <strong>✔ Rapport PDF + présentation PowerPoint</strong>`,
+                <strong>✔ Conclusion :</strong> modèle OLS biaisé → passage à la méthode DiD (Projet 2/2)`,
       tags: ["R", "sf", "ggplot2", "arrow", "parquet", "geodata", "rnaturalearth", "stargazer", "SIG"],
-      skills: "Analyse géospatiale, traitement de données multi-sources, cartographie avec R, modélisation statistique environnementale.",
+      skills: "Analyse géospatiale, traitement de données multi-sources, cartographie avec R, détection de biais dans les modèles de régression.",
       link: "https://github.com/marwane93600/analyse-spatiale"
+    },
+    {
+      icon: "🏠",
+      title: "Pollution & Immobilier — Modèle Causal DiD (2/2)",
+      desc: "Suite de l'analyse spatiale : la méthode Difference-in-Differences (Callaway-Sant'Anna) est appliquée pour estimer causalement l'effet des installations IREP sur les prix immobiliers (DVF+), en s'affranchissant du biais identifié en partie 1/2.",
+      results: `<strong>✔ Pipeline en 6 étapes :</strong> nettoyage → matching spatial → construction de panel → estimations<br>
+                <strong>✔ Méthode avancée :</strong> DiD avec Callaway-Sant'Anna et Sun-Abraham (hétérogénéité)<br>
+                <strong>✔ Données réelles :</strong> transactions immobilières DVF+ + données IREP (établissements)<br>
+                <strong>✔ Rapport complet :</strong> LaTeX + présentation Beamer`,
+      tags: ["R", "tidyverse", "sf", "fixest", "did", "ggplot2", "LaTeX", "Beamer", "DiD", "Économétrie causale"],
+      skills: "Inférence causale, économétrie avancée, données spatiales, communication scientifique (LaTeX/Beamer), reproductibilité des analyses.",
+      link: "https://github.com/marwane93600/pollution-immobilier-did"
     },
     {
       icon: "🌫️",
