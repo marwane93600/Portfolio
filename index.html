@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Marwane El Bachir — Portfolio Data</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230d1117'/%3E%3Ctext x='50' y='68' font-size='58' font-family='Arial,sans-serif' font-weight='800' fill='%2358a6ff' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-6CGW7Z21Q6"></script>
   <script>
@@ -36,6 +37,33 @@
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', Helvetica, Arial, sans-serif;
       line-height: 1.6;
     }
+
+    /* ─── SCROLLBAR ─── */
+    ::-webkit-scrollbar { width: 10px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--bg3); border-radius: 6px; border: 2px solid var(--bg); }
+    ::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+    * { scrollbar-color: var(--bg3) var(--bg); scrollbar-width: thin; }
+
+    /* ─── SCROLL PROGRESS ─── */
+    .scroll-progress {
+      position: fixed; top: 0; left: 0; height: 2.5px; width: 0%;
+      background: linear-gradient(90deg, var(--accent), var(--accent3));
+      z-index: 200; transition: width 0.1s ease-out;
+    }
+
+    /* ─── BACK TO TOP ─── */
+    .to-top {
+      position: fixed; bottom: 1.75rem; right: 1.75rem; z-index: 90;
+      width: 42px; height: 42px; border-radius: 50%;
+      background: var(--bg2); border: 1px solid var(--border);
+      color: var(--accent); display: flex; align-items: center; justify-content: center;
+      cursor: pointer; text-decoration: none; font-size: 1rem;
+      opacity: 0; pointer-events: none; transform: translateY(10px);
+      transition: opacity 0.25s ease, transform 0.25s ease, border-color 0.2s, box-shadow 0.2s;
+    }
+    .to-top.visible { opacity: 1; pointer-events: auto; transform: translateY(0); }
+    .to-top:hover { border-color: var(--accent); box-shadow: 0 6px 20px rgba(88,166,255,0.2); }
 
     /* ─── NAV ─── */
     nav {
@@ -70,6 +98,27 @@
       background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(88,166,255,0.12), transparent),
                   radial-gradient(ellipse 60% 40% at 80% 80%, rgba(188,140,255,0.08), transparent);
     }
+    .hero-orb {
+      position: absolute; z-index: 0; border-radius: 50%;
+      filter: blur(70px); opacity: 0.35; pointer-events: none;
+      animation: drift 16s ease-in-out infinite alternate;
+    }
+    .hero-orb.one {
+      width: 320px; height: 320px; top: 8%; left: 8%;
+      background: radial-gradient(circle, rgba(88,166,255,0.35), transparent 70%);
+    }
+    .hero-orb.two {
+      width: 260px; height: 260px; bottom: 5%; right: 10%;
+      background: radial-gradient(circle, rgba(188,140,255,0.3), transparent 70%);
+      animation-delay: -8s;
+    }
+    @keyframes drift {
+      from { transform: translate(0, 0) scale(1); }
+      to   { transform: translate(30px, -20px) scale(1.08); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .hero-orb { animation: none; }
+    }
     .hero-content { position: relative; z-index: 1; text-align: center; max-width: 700px; }
     .hero-badge {
       display: inline-block;
@@ -78,6 +127,11 @@
       color: var(--accent); border-radius: 999px;
       padding: 0.3rem 1rem; font-size: 0.8rem;
       margin-bottom: 1.5rem; letter-spacing: 0.5px;
+      animation: badgeGlow 3.5s ease-in-out infinite;
+    }
+    @keyframes badgeGlow {
+      0%, 100% { box-shadow: 0 0 0 rgba(88,166,255,0); }
+      50%      { box-shadow: 0 0 16px rgba(88,166,255,0.25); }
     }
     .hero h1 {
       font-size: clamp(2.2rem, 5vw, 3.5rem);
@@ -103,12 +157,12 @@
     .btn-primary {
       background: var(--accent); color: #0d1117;
     }
-    .btn-primary:hover { background: #79b8ff; transform: translateY(-1px); }
+    .btn-primary:hover { background: #79b8ff; transform: translateY(-1px); box-shadow: 0 6px 22px rgba(88,166,255,0.3); }
     .btn-outline {
       border: 1px solid var(--border); color: var(--text);
       background: transparent;
     }
-    .btn-outline:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); }
+    .btn-outline:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); box-shadow: 0 6px 22px rgba(88,166,255,0.12); }
 
     /* ─── SECTIONS ─── */
     section { padding: 80px 2rem; }
@@ -142,6 +196,11 @@
     .stat-card {
       background: var(--bg3); border: 1px solid var(--border);
       border-radius: 12px; padding: 1.25rem 1.5rem;
+      transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+    }
+    .stat-card:hover {
+      border-color: var(--accent); transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(88,166,255,0.1);
     }
     .stat-num { font-size: 2rem; font-weight: 800; color: var(--accent); }
     .stat-label { color: var(--text2); font-size: 0.85rem; }
@@ -338,6 +397,8 @@
 </head>
 <body>
 
+<div class="scroll-progress" id="scrollProgress"></div>
+
 <!-- ─── NAV ─── -->
 <nav>
   <div class="nav-logo">Marwane El Bachir</div>
@@ -352,14 +413,16 @@
 <!-- ─── HERO ─── -->
 <section class="hero">
   <div class="hero-bg"></div>
+  <div class="hero-orb one"></div>
+  <div class="hero-orb two"></div>
   <div class="hero-content fade-in">
-    <div class="hero-badge">🎓 L3 CMI Data Science — Université Paris Nanterre</div>
+    <div class="hero-badge">🎓 M1 CMI Data Science — Université Paris Nanterre</div>
     <h1>Marwane <span>El Bachir</span></h1>
     <p class="hero-sub">Data Analyst · Big Data · Économétrie</p>
     <p class="hero-desc">
       Passionné par la donnée, je transforme des jeux de données complexes
       en insights actionnables — de l'analyse exploratoire aux modèles causaux.<br>
-      <span style="color:var(--accent2);font-size:0.85rem;">🔍 Recherche stage 2 mois (juin 2026) + alternance Data Analyst 2026–2028 · Île-de-France</span>
+      <span style="color:var(--accent2);font-size:0.85rem;">🔍 Recherche alternance Data Analyst 2026–2028 · Île-de-France</span>
     </p>
     <div class="hero-btns">
       <a href="#projects" class="btn btn-primary">Voir mes projets →</a>
@@ -376,7 +439,7 @@
     <div class="about-grid fade-in">
       <div class="about-text">
         <p>
-          Étudiant en <strong>L3 CMI Data Science</strong> à l'Université Paris Nanterre,
+          Étudiant en <strong>M1 CMI Data Science</strong> à l'Université Paris Nanterre,
           après une L1 Économie à Paris 1 Panthéon-Sorbonne. Je me spécialise dans
           l'analyse de données, la modélisation statistique et les pipelines de données.
         </p>
@@ -386,8 +449,7 @@
           et l'aide à la décision.
         </p>
         <p>
-          Je recherche un <strong>stage de 2 mois à partir de juin 2026</strong>, puis une
-          <strong>alternance Data Analyst 2026–2028</strong> en Île-de-France.
+          Je recherche une <strong>alternance Data Analyst 2026–2028</strong> en Île-de-France.
           Permis B · Mobile.
         </p>
         <div class="about-tags">
@@ -417,7 +479,7 @@
           <div class="stat-label">Langages (C · R · Python · SQL · Java · JS)</div>
         </div>
         <div class="stat-card">
-          <div class="stat-num">L3 CMI</div>
+          <div class="stat-num">M1 CMI</div>
           <div class="stat-label">Data Science — Paris Nanterre</div>
         </div>
       </div>
@@ -680,7 +742,7 @@
     <div class="section-title fade-in" style="text-align:center">Me <span>contacter</span></div>
     <div class="section-line fade-in" style="margin:0 auto 2.5rem"></div>
     <div class="contact-card fade-in">
-      <h3>Disponible pour un stage (juin 2026) et une alternance 2026–2028 📊</h3>
+      <h3>Disponible pour une alternance Data Analyst 2026–2028 📊</h3>
       <p>
         Data Analyst · Île-de-France · Ouvert aux opportunités en data, BI, analyse économique ou Big Data.<br>
         N'hésitez pas à me contacter pour discuter d'un projet ou d'une collaboration.
@@ -742,9 +804,12 @@
   </div>
 </div>
 
+<!-- ─── BACK TO TOP ─── -->
+<a href="#" class="to-top" id="toTop" aria-label="Retour en haut">↑</a>
+
 <!-- ─── FOOTER ─── -->
 <footer>
-  <p>© 2026 Marwane El Bachir · L3 CMI Data Science — Université Paris Nanterre · Fait avec ❤️ et beaucoup de data</p>
+  <p>© 2026 Marwane El Bachir · M1 CMI Data Science — Université Paris Nanterre · Fait avec ❤️ et beaucoup de data</p>
 </footer>
 
 <!-- ─── JS ─── -->
@@ -907,6 +972,23 @@
     document.body.style.overflow = '';
   }
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModalDirect(); });
+
+  // ── Barre de progression de scroll + bouton retour en haut ──
+  const scrollProgress = document.getElementById('scrollProgress');
+  const toTopBtn = document.getElementById('toTop');
+  function onScroll() {
+    const h = document.documentElement;
+    const scrolled = h.scrollTop;
+    const max = h.scrollHeight - h.clientHeight;
+    scrollProgress.style.width = (max > 0 ? (scrolled / max) * 100 : 0) + '%';
+    toTopBtn.classList.toggle('visible', scrolled > 500);
+  }
+  document.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+  toTopBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
 </script>
 
 </body>
