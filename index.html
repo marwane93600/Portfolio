@@ -271,6 +271,7 @@
     .lang-python { background: #3572A5; }
     .lang-r { background: #198CE7; }
     .lang-c { background: #555555; }
+    .lang-js { background: #f1e05a; }
 
     /* ─── CONTACT ─── */
     .contact-card {
@@ -585,6 +586,31 @@
     <div class="section-line fade-in"></div>
     <div class="projects-grid fade-in">
 
+      <!-- Projet SIENCE — Expérience professionnelle -->
+      <div class="project-card">
+        <div class="project-header">
+          <span class="project-icon">🧾</span>
+          <span class="project-stars">💼 Stage professionnel</span>
+        </div>
+        <div class="project-title">Application CRM & Facturation — SIENCE</div>
+        <div class="project-desc">
+          Conception et développement d'une application web de CRM et facturation pour une PME,
+          avec automatisation d'une partie du processus de facturation et analyse des
+          indicateurs clés de performance pour l'aide au pilotage.
+        </div>
+        <div class="project-tags">
+          <span class="project-tag">React</span>
+          <span class="project-tag">Chart.js</span>
+          <span class="project-tag">VBA</span>
+          <span class="project-tag purple">CRM</span>
+          <span class="project-tag green">Automatisation</span>
+          <span class="project-tag">KPI / Reporting</span>
+        </div>
+        <div class="project-footer">
+          <div class="project-lang"><span class="lang-dot lang-js"></span> JavaScript</div>
+        </div>
+      </div>
+
       <!-- Projet 1 -->
       <div class="project-card">
         <div class="project-header">
@@ -866,6 +892,18 @@
   // ── Données des projets pour la modale ──
   const projects = [
     {
+      icon: "🧾",
+      title: "Application CRM & Facturation — SIENCE",
+      desc: "Stage chez SIENCE : conception et développement d'une application web de gestion CRM et facturation. Automatisation d'une partie du processus de facturation. Volet data : extraction, structuration et analyse des indicateurs clés de performance, avec production de présentations pour appuyer le pilotage et la prise de décision.",
+      results: `<strong>✔ Application web complète :</strong> CRM et facturation développés avec React et Chart.js<br>
+                <strong>✔ Automatisation :</strong> partie du processus de facturation automatisée en VBA<br>
+                <strong>✔ Analyse data :</strong> extraction, structuration et analyse des indicateurs clés de performance<br>
+                <strong>✔ Communication :</strong> présentations et analyses data produites pour la prise de décision`,
+      tags: ["React", "Chart.js", "VBA", "CRM", "Automatisation", "KPI", "Reporting"],
+      skills: "Développement web (React), visualisation de données (Chart.js), automatisation de processus métier (VBA), analyse d'indicateurs de performance, communication de résultats data à des décideurs.",
+      link: null
+    },
+    {
       icon: "📰",
       title: "Analyse de Sentiment de Marché",
       desc: "Pipeline NLP complet pour récupérer des actualités économiques en français via l'API NewsAPI, les analyser automatiquement (polarité entre -1 et +1) et classer chaque article en Positif, Neutre ou Négatif. Résultats exportés en CSV et graphique PNG.",
@@ -948,7 +986,13 @@
       document.getElementById('modalDesc').textContent = p.desc;
       document.getElementById('modalResults').innerHTML = p.results;
       document.getElementById('modalSkills').textContent = p.skills;
-      document.getElementById('modalLink').href = p.link;
+      const modalLinkEl = document.getElementById('modalLink');
+      if (p.link) {
+        modalLinkEl.href = p.link;
+        modalLinkEl.style.display = 'inline-flex';
+      } else {
+        modalLinkEl.style.display = 'none';
+      }
 
       const tagsEl = document.getElementById('modalTags');
       tagsEl.innerHTML = '';
