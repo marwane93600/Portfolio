@@ -6,7 +6,7 @@
   <title>Marwane El Bachir — Portfolio Data</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230d1117'/%3E%3Ctext x='50' y='68' font-size='58' font-family='Arial,sans-serif' font-weight='800' fill='%2358a6ff' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
   <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6CGW7Z21Q6"></script>
+  <script>if (location.hostname.endsWith("github.io")) document.write('<script async src="https://www.googletagmanager.com/gtag/js?id=G-6CGW7Z21Q6"><\/script>');</script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -15,15 +15,15 @@
   </script>
   <style>
     :root {
-      --bg: #0d1117;
-      --bg2: #161b22;
-      --bg3: #21262d;
-      --accent: #58a6ff;
+      --bg: #0e1020;
+      --bg2: #171a2b;
+      --bg3: #242840;
+      --accent: #a78bfa;
       --accent2: #7ee787;
-      --accent3: #bc8cff;
+      --accent3: #7c9cff;
       --text: #e6edf3;
       --text2: #8b949e;
-      --border: #30363d;
+      --border: #333750;
       --card-hover: #1c2128;
     }
 
@@ -63,12 +63,12 @@
       transition: opacity 0.25s ease, transform 0.25s ease, border-color 0.2s, box-shadow 0.2s;
     }
     .to-top.visible { opacity: 1; pointer-events: auto; transform: translateY(0); }
-    .to-top:hover { border-color: var(--accent); box-shadow: 0 6px 20px rgba(88,166,255,0.2); }
+    .to-top:hover { border-color: var(--accent); box-shadow: 0 6px 20px rgba(167,139,250,0.2); }
 
     /* ─── NAV ─── */
     nav {
       position: fixed; top: 0; width: 100%; z-index: 100;
-      background: rgba(13,17,23,0.85);
+      background: rgba(14,16,32,0.85);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
       padding: 0 2rem;
@@ -88,50 +88,24 @@
 
     /* ─── HERO ─── */
     .hero {
-      min-height: 100vh;
+      min-height: calc(100vh - 12rem);
       display: flex; align-items: center; justify-content: center;
-      padding: 80px 2rem 2rem;
+      padding: 60px 2rem 0;
       position: relative; overflow: hidden;
-    }
-    .hero-bg {
-      position: absolute; inset: 0; z-index: 0;
-      background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(88,166,255,0.12), transparent),
-                  radial-gradient(ellipse 60% 40% at 80% 80%, rgba(188,140,255,0.08), transparent);
-    }
-    .hero-orb {
-      position: absolute; z-index: 0; border-radius: 50%;
-      filter: blur(70px); opacity: 0.35; pointer-events: none;
-      animation: drift 16s ease-in-out infinite alternate;
-    }
-    .hero-orb.one {
-      width: 320px; height: 320px; top: 8%; left: 8%;
-      background: radial-gradient(circle, rgba(88,166,255,0.35), transparent 70%);
-    }
-    .hero-orb.two {
-      width: 260px; height: 260px; bottom: 5%; right: 10%;
-      background: radial-gradient(circle, rgba(188,140,255,0.3), transparent 70%);
-      animation-delay: -8s;
-    }
-    @keyframes drift {
-      from { transform: translate(0, 0) scale(1); }
-      to   { transform: translate(30px, -20px) scale(1.08); }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      .hero-orb { animation: none; }
     }
     .hero-content { position: relative; z-index: 1; text-align: center; max-width: 700px; }
     .hero-badge {
       display: inline-block;
-      background: rgba(88,166,255,0.1);
-      border: 1px solid rgba(88,166,255,0.3);
+      background: rgba(167,139,250,0.1);
+      border: 1px solid rgba(167,139,250,0.3);
       color: var(--accent); border-radius: 999px;
       padding: 0.3rem 1rem; font-size: 0.8rem;
       margin-bottom: 1.5rem; letter-spacing: 0.5px;
       animation: badgeGlow 3.5s ease-in-out infinite;
     }
     @keyframes badgeGlow {
-      0%, 100% { box-shadow: 0 0 0 rgba(88,166,255,0); }
-      50%      { box-shadow: 0 0 16px rgba(88,166,255,0.25); }
+      0%, 100% { box-shadow: 0 0 0 rgba(167,139,250,0); }
+      50%      { box-shadow: 0 0 16px rgba(167,139,250,0.25); }
     }
     .hero h1 {
       font-size: clamp(2.2rem, 5vw, 3.5rem);
@@ -155,14 +129,14 @@
       text-decoration: none; transition: all 0.2s; cursor: pointer;
     }
     .btn-primary {
-      background: var(--accent); color: #0d1117;
+      background: var(--accent); color: #0e1020;
     }
-    .btn-primary:hover { background: #79b8ff; transform: translateY(-1px); box-shadow: 0 6px 22px rgba(88,166,255,0.3); }
+    .btn-primary:hover { background: #c4b5fd; transform: translateY(-1px); box-shadow: 0 6px 22px rgba(167,139,250,0.3); }
     .btn-outline {
       border: 1px solid var(--border); color: var(--text);
       background: transparent;
     }
-    .btn-outline:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); box-shadow: 0 6px 22px rgba(88,166,255,0.12); }
+    .btn-outline:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); box-shadow: 0 6px 22px rgba(167,139,250,0.12); }
 
     /* ─── SECTIONS ─── */
     section { padding: 80px 2rem; }
@@ -200,7 +174,7 @@
     }
     .stat-card:hover {
       border-color: var(--accent); transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(88,166,255,0.1);
+      box-shadow: 0 8px 24px rgba(167,139,250,0.1);
     }
     .stat-num { font-size: 2rem; font-weight: 800; color: var(--accent); }
     .stat-label { color: var(--text2); font-size: 0.85rem; }
@@ -221,7 +195,6 @@
     .skill-item { margin-bottom: 1rem; }
     .skill-header { display: flex; justify-content: space-between; margin-bottom: 0.4rem; }
     .skill-name { font-size: 0.875rem; color: var(--text); }
-    .skill-pct { font-size: 0.75rem; color: var(--text2); }
     .skill-bar { height: 5px; background: var(--bg3); border-radius: 3px; overflow: hidden; }
     .skill-fill {
       height: 100%; border-radius: 3px;
@@ -244,7 +217,7 @@
     .project-card:hover {
       border-color: var(--accent);
       transform: translateY(-3px);
-      box-shadow: 0 8px 30px rgba(88,166,255,0.1);
+      box-shadow: 0 8px 30px rgba(167,139,250,0.1);
     }
     .project-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.75rem; }
     .project-icon { font-size: 1.5rem; }
@@ -253,7 +226,7 @@
     .project-desc { color: var(--text2); font-size: 0.875rem; flex: 1; margin-bottom: 1rem; }
     .project-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1rem; }
     .project-tag {
-      background: rgba(88,166,255,0.1); border: 1px solid rgba(88,166,255,0.2);
+      background: rgba(167,139,250,0.1); border: 1px solid rgba(167,139,250,0.2);
       color: var(--accent); padding: 0.2rem 0.6rem;
       border-radius: 5px; font-size: 0.75rem; font-weight: 500;
     }
@@ -307,7 +280,7 @@
 
     /* ─── SKILL ITEM CLICKABLE ─── */
     .skill-item { cursor: pointer; border-radius: 6px; padding: 4px 6px; margin: 0 -6px 0.75rem; transition: background 0.15s; }
-    .skill-item:hover { background: rgba(88,166,255,0.06); }
+    .skill-item:hover { background: rgba(167,139,250,0.06); }
     .skill-item:hover .skill-name { color: var(--accent); }
 
     /* ─── SKILL TOOLTIP POPUP ─── */
@@ -339,7 +312,7 @@
     /* ─── MODAL ─── */
     .modal-overlay {
       display: none; position: fixed; inset: 0; z-index: 999;
-      background: rgba(0,0,0,0.75); backdrop-filter: blur(4px);
+      background: rgba(0,0,0,0.78);
       align-items: center; justify-content: center; padding: 1rem;
     }
     .modal-overlay.open { display: flex; }
@@ -394,97 +367,299 @@
       .projects-grid { grid-template-columns: 1fr; }
       .nav-links { display: none; }
     }
-  </style>
+
+    /* Première page : les projets se voient tout de suite */
+    .hero { gap: clamp(2rem, 4vw, 4rem); align-items: center; }
+    .hero-content { text-align: left; max-width: 520px; flex: 1 1 420px; }
+    .hero-btns { justify-content: flex-start; }
+    .hero-badge { margin-left: 0; }
+    .ancien-hero-projets { position: relative; z-index: 1; flex: 1 1 560px; max-width: 680px; }
+    .ancien-hero-projets-titre { font-size: 1.25rem; font-weight: 700; margin-bottom: .75rem; }
+    .ancien-hero-projets-titre span { color: var(--accent); }
+    #heroListe { display: grid; gap: .45rem; }
+    .hl { display: grid; grid-template-columns: 66px minmax(0,1fr); gap: .85rem; align-items: center; width: 100%; padding: .35rem .85rem .35rem .35rem; background: var(--bg2); border: 1px solid var(--border); border-radius: 9px; color: inherit; font: inherit; text-align: left; cursor: pointer; transition: border-color .2s, transform .2s, background-color .2s; }
+    .hl:hover, .hl:focus-visible { border-color: var(--accent); transform: translateX(4px); background: var(--card-hover); outline: none; }
+    .hl img { display: block; width: 66px; height: 44px; object-fit: cover; border-radius: 6px; }
+    .hl b { display: block; font-size: .9rem; font-weight: 700; line-height: 1.25; }
+    .hl small { display: block; color: var(--text2); font-size: .78rem; line-height: 1.3; margin-top: 1px; }
+    @media (max-width: 1040px) {
+      .hero { flex-direction: column; justify-content: flex-start; }
+      .hero-content, .ancien-hero-projets { flex: none; width: 100%; max-width: 680px; }
+    }
+
+    /* Première page sans le grand nom */
+    .invisible { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+    .hero-recherche { font-size: clamp(1.625rem, 2.7vw, 2.375rem); line-height: 1.18; font-weight: 700; letter-spacing: -.02em; margin: 1rem 0 .75rem; }
+    /* Fiche projet */
+    .modal { max-width: 860px; }
+    .fiche-tete { display: flex; justify-content: space-between; gap: 1rem; align-items: flex-start; padding: 1.5rem 1.5rem .75rem; }
+    .fiche-titre { font-size: clamp(1.375rem, 2.4vw, 1.75rem); line-height: 1.15; font-weight: 700; letter-spacing: -.015em; }
+    .fiche-contexte { color: var(--text2); font-size: .875rem; margin-top: .3rem; }
+    .fiche-apercu { margin: 0 1.5rem; padding: 1rem; background: var(--bg); border: 1px solid var(--border); border-radius: 10px; display: grid; gap: .85rem; }
+    .fiche-apercu img { display: block; width: 100%; max-height: 380px; object-fit: contain; border-radius: 6px; }
+    .fiche-corps { padding: 1.25rem 1.5rem 0; display: grid; gap: 1.1rem; }
+    .fiche-duo { display: grid; gap: 1.1rem; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+    .fiche-bloc h3 { color: var(--accent); font-size: .95rem; font-weight: 700; margin-bottom: .3rem; }
+    .fiche-bloc p, .fiche-bloc li { color: var(--text); font-size: .925rem; line-height: 1.55; }
+    .fiche-bloc ul { padding-left: 1.1rem; }
+    .fiche-bloc li { margin-bottom: .2rem; }
+    .fiche-tags { display: flex; flex-wrap: wrap; gap: .4rem; }
+    .fiche-liens { display: flex; flex-wrap: wrap; gap: .6rem; padding: 1.25rem 1.5rem 1.5rem; }
+    .fiche-btn { display: inline-block; padding: .6rem 1rem; border-radius: 7px; border: 1px solid var(--border); background: var(--bg3); color: var(--text); font-weight: 600; font-size: .875rem; text-decoration: none; transition: border-color .2s, color .2s; }
+    .fiche-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .fiche-btn.plein { background: var(--accent); border-color: var(--accent); color: #0e1020; }
+    .fiche-btn.plein:hover { color: #0e1020; opacity: .88; }
+    /* Aperçus visuels */
+    .ap-etapes { display: grid; gap: .5rem; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+    .ap-etapes > div { background: var(--bg3); border-radius: 8px; padding: .75rem; }
+    .ap-etapes .fort { background: rgba(167,139,250,.16); box-shadow: inset 0 0 0 1px var(--accent); }
+    .ap-etapes small, .ap-etapes span { display: block; color: var(--text2); font-size: .78rem; line-height: 1.25; }
+    .ap-etapes b { display: block; font-size: 1.5rem; line-height: 1.2; margin: .15rem 0; }
+    .ap-sience { background: #122A20; border-radius: 8px; padding: 1rem; color: #F5EFE3; }
+    .ap-flux { display: flex; flex-wrap: wrap; align-items: stretch; gap: .4rem; }
+    .ap-flux > div { flex: 1 1 130px; background: #1E4B39; border-radius: 7px; padding: .75rem; font-weight: 700; font-size: .875rem; line-height: 1.2; }
+    .ap-flux > div.fort { background: #F4A340; color: #122A20; }
+    .ap-flux small { display: block; font-weight: 400; font-size: .75rem; margin-top: .25rem; }
+    .ap-flux i { display: none; }
+    .ap-base { margin-top: .4rem; background: #0C1E17; border-radius: 7px; padding: .6rem .75rem; text-align: center; font-size: .82rem; }
+    .ap-phases { display: flex; gap: 3px; }
+    .ap-phases > div { min-width: 0; background: #0F86DE; color: #fff; border-radius: 4px; padding: .45rem; font-size: .72rem; font-weight: 700; line-height: 1.15; overflow-wrap: anywhere; }
+    .ap-phases small { display: block; font-weight: 400; font-size: .68rem; margin-top: 2px; }
+    .ap-gaufre { display: grid; grid-template-columns: repeat(20, 1fr); gap: 3px; }
+    .ap-gaufre i { display: block; aspect-ratio: 1; background: var(--bg3); border-radius: 2px; }
+    .ap-gaufre i.pos, .ap-legende b.pos { background: var(--accent2); }
+    .ap-gaufre i.neg, .ap-legende b.neg { background: #F47067; }
+    .ap-legende { display: flex; flex-wrap: wrap; gap: .3rem 1rem; font-size: .8rem; color: var(--text2); }
+    .ap-legende span { display: inline-flex; align-items: center; gap: .35rem; }
+    .ap-legende b { display: inline-block; width: 11px; height: 11px; border-radius: 2px; background: var(--bg3); }
+    .ap-barres { display: grid; gap: .35rem; }
+    .ap-barres > div { display: grid; grid-template-columns: 8.5rem minmax(0,1fr); column-gap: .6rem; align-items: center; position: relative; font-size: .8rem; }
+    .ap-barres i { grid-column: 2; display: block; height: 14px; border-radius: 3px; background: var(--accent); }
+    .ap-barres span { grid-row: 1; color: var(--text2); line-height: 1.15; }
+    .ap-barres b { position: absolute; right: 0; top: 0; font-weight: 600; }
+    .ap-note { color: var(--text2); font-size: .8rem; }
+    .ap-code { margin: 0; padding: .9rem; background: #17191D; border-radius: 8px; color: #E8E8E3; font: .8125rem/1.5 ui-monospace, Menlo, Consolas, monospace; overflow-x: auto; }
+    .ap-code b { font-weight: 400; color: #F0BE2C; }
+    .ap-duo { display: grid; gap: .75rem; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); }
+    .ap-duo figure { margin: 0; }
+    .ap-duo img { background: #fff; aspect-ratio: 8 / 5; object-fit: contain; }
+    .ap-duo figcaption { color: var(--text2); font-size: .78rem; line-height: 1.3; margin-top: .3rem; }
+    .ap-chemin { display: grid; gap: .4rem; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+    .ap-chemin > div { background: #122A20; color: #F5EFE3; border-radius: 7px; padding: .6rem .7rem; font-size: .84rem; font-weight: 600; line-height: 1.25; }
+    .ap-chemin b { display: block; color: #F4A340; font-size: 1.05rem; }
+    .ap-duo img { background: #fff; }
+
+    /* Accueil : À propos, puis les projets au clic */
+    .hero { align-items: center; gap: clamp(2rem, 5vw, 5rem); justify-content: center; }
+    .hero-content { flex: 1 1 440px; max-width: 540px; }
+    .hero-apropos { position: relative; z-index: 1; flex: 1 1 500px; max-width: 620px; padding: 1.5rem; background: rgba(22,27,34,.8); border: 1px solid var(--border); border-radius: 14px; }
+    .hero-apropos-titre { font-size: 1.25rem; font-weight: 700; margin-bottom: .6rem; }
+    .hero-apropos-titre span { color: var(--accent); }
+    .hero-apropos .about-text p { color: var(--text2); font-size: .925rem; margin-bottom: .6rem; }
+    .hero-apropos .about-tags { margin: .75rem 0 1rem; }
+    .hero-apropos .about-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: .5rem; }
+    .hero-apropos .stat-card { padding: .7rem; }
+    .hero-apropos .stat-num { font-size: 1.25rem; }
+    .hero-apropos .stat-label { font-size: .72rem; line-height: 1.25; }
+    .js-off { display: block; }
+    .projets-inner { max-width: 1160px; }
+    .cartes { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
+    .carte { display: block; width: 100%; padding: 0; overflow: hidden; background: var(--bg2); border: 1px solid var(--border); border-radius: 12px; color: inherit; font: inherit; text-align: left; cursor: pointer; transition: border-color .2s, transform .2s, box-shadow .2s; animation: carteArrive .45s ease backwards; }
+    .carte:hover, .carte:focus-visible { border-color: var(--accent); transform: translateY(-4px); box-shadow: 0 10px 28px rgba(0,0,0,.35); outline: none; }
+    .carte img { display: block; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; }
+    .carte-texte { display: block; padding: .85rem 1rem 1rem; }
+    .carte-texte b { display: block; font-size: 1rem; line-height: 1.25; }
+    .carte-texte small { display: block; color: var(--text2); font-size: .85rem; line-height: 1.35; margin-top: .25rem; }
+    @keyframes carteArrive { from { opacity: 0; transform: translateY(14px); } }
+    @media (prefers-reduced-motion: reduce) { .carte { animation: none; transition: none; } }
+
+    /* Accueil d'un seul tenant */
+    .hero { display: block; padding: 0; }
+    /* Page d'un projet, en plein écran */
+    .modal-overlay { background: #0e1020; padding: 0; align-items: stretch; }
+    .pj { --pj-fond: #171a2b; --pj-accent: var(--accent); position: relative; width: 100%; height: 100vh; height: 100dvh; overflow-y: auto; background: #0e1020; animation: pjArrive .25s ease; }
+    @keyframes pjArrive { from { opacity: 0; transform: translateY(12px); } }
+    .pj-fermer { position: sticky; top: 1rem; z-index: 3; display: block; margin: 1rem 0 0 max(1rem, calc((100% - 1120px) / 2)); padding: .55rem .95rem; border: 1px solid rgba(255,255,255,.28); border-radius: 8px; background: rgba(14,16,32,.88); color: #fff; font: 600 .875rem/1.2 inherit; cursor: pointer; }
+    .pj-fermer:hover { border-color: var(--pj-accent); color: var(--pj-accent); }
+    .pj-contenu { max-width: 1120px; margin: 0 auto; padding: 1rem 1.5rem 3rem; }
+    .pj-tete { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); overflow: hidden; border-radius: 16px; background: var(--pj-fond); }
+    .pj-titres { padding: clamp(1.5rem, 3vw, 2.5rem); align-self: center; color: #fff; }
+    .pj-titres h2 { color: var(--pj-accent); font-size: clamp(1.625rem, 2.8vw, 2.5rem); line-height: 1.1; font-weight: 700; letter-spacing: -.02em; }
+    .pj-titres p { margin-top: .85rem; font-size: 1.0625rem; line-height: 1.4; }
+    .pj-grille { display: grid; grid-template-columns: minmax(0, 8fr) minmax(0, 3fr); gap: clamp(1.5rem, 3vw, 3rem); margin-top: clamp(1.75rem, 3vw, 2.75rem); align-items: start; }
+    .pj-duo { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; }
+    .pj h3 { color: var(--pj-accent); font-size: 1.0625rem; font-weight: 700; margin-bottom: .4rem; }
+    .pj-bloc p, .pj-bloc li, .pj-resultat p { color: var(--text); font-size: 1rem; line-height: 1.6; }
+    .pj-bloc ul { padding-left: 1.15rem; margin: 0; }
+    .pj-bloc li { margin-bottom: .3rem; }
+    .pj-recit > .pj-bloc { margin-top: 1.5rem; }
+    .pj-resultat { margin-top: 1.5rem; padding: 1.15rem 1.25rem; background: var(--pj-fond); border-left: 4px solid var(--pj-accent); border-radius: 0 10px 10px 0; }
+    .pj-infos { position: sticky; top: 4.5rem; padding: 1.15rem; background: #171a2b; border: 1px solid var(--border); border-radius: 12px; }
+    .pj-infos h3 { font-size: .9375rem; margin-top: 1rem; }
+    .pj-infos h3:first-child { margin-top: 0; }
+    .pj-infos p { color: var(--text2); font-size: .875rem; line-height: 1.45; }
+    .pj-tags { display: flex; flex-wrap: wrap; gap: .35rem; }
+    .pj-tags span { padding: .2rem .55rem; border-radius: 5px; background: var(--bg3); color: var(--text); font-size: .78rem; }
+    .pj-liens { display: grid; gap: .45rem; margin-top: 1.1rem; }
+    .pj-btn { display: block; padding: .6rem .8rem; border: 1px solid var(--border); border-radius: 7px; color: var(--text); font-size: .875rem; font-weight: 600; text-align: center; text-decoration: none; }
+    .pj-btn:hover { border-color: var(--pj-accent); color: var(--pj-accent); }
+    .pj-btn.plein { background: var(--pj-accent); border-color: var(--pj-accent); color: #0e1020; }
+    .pj-btn.plein:hover { color: #0e1020; opacity: .88; }
+    .pj-visuel { margin-top: clamp(1.75rem, 3vw, 2.75rem); }
+    .pj-apercu { padding: clamp(.85rem, 1.6vw, 1.25rem); background: #171a2b; border: 1px solid var(--border); border-radius: 12px; display: grid; gap: .9rem; }
+    .pj-apercu img { display: block; width: 100%; max-height: 520px; object-fit: contain; border-radius: 6px; }
+    .pj-suivant { display: block; width: 100%; margin-top: clamp(1.75rem, 3vw, 2.75rem); padding: 1.15rem 1.35rem; background: var(--pj-fond); border: 1px solid var(--border); border-radius: 12px; color: #fff; font: 700 clamp(1.0625rem, 1.8vw, 1.375rem)/1.25 inherit; text-align: left; cursor: pointer; }
+    .pj-suivant span { display: block; color: var(--text2); font-size: .8125rem; font-weight: 400; margin-bottom: .2rem; }
+    .pj-suivant:hover { border-color: var(--pj-accent); }
+    @media (max-width: 860px) {
+      .pj-tete, .pj-grille { grid-template-columns: 1fr; }
+        .pj-infos { position: static; }
+    }
+    .pj section { padding: 0; border: 0; background: none; }
+    .pj .pj-resultat { padding: 1.15rem 1.25rem; background: var(--pj-fond); border-left: 4px solid var(--pj-accent); }
+    .pj-fermer { position: fixed; top: 1rem; right: 1.25rem; margin: 0; background: #0e1020; }
+    .pj-contenu { padding-top: 3.75rem; }
+    .ap-table { width: 100%; border-collapse: collapse; font-size: .875rem; }
+    .ap-table th, .ap-table td { padding: .4rem .5rem; text-align: right; border-bottom: 1px solid var(--border); font-weight: 400; }
+    .ap-table th { color: var(--text2); }
+    .ap-table th:first-child, .ap-table td:first-child { text-align: left; }
+  
+    /* ── Fond ── */
+    #fond { position: fixed; inset: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none; background: radial-gradient(55% 60% at 92% 8%, rgba(124,76,235,.3), transparent 70%), radial-gradient(50% 55% at 4% 100%, rgba(90,60,200,.2), transparent 70%); }
+
+    /* ── En-tête ── */
+    nav { padding-inline: max(2rem, calc((100% - 1160px) / 2)); height: 64px; }
+    .nav-logo { display: inline-flex; align-items: center; gap: .55rem; text-decoration: none; }
+    .nav-cv { padding: .45rem 1rem; font-size: .8125rem; border-radius: 8px; }
+    .entete { padding: 84px 2rem 0; }
+    .entete-in { max-width: 1160px; margin: 0 auto; display: grid; grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr); gap: clamp(2rem, 4vw, 3.5rem); align-items: center; }
+    .entete-sur { color: var(--accent); font-size: .75rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; }
+    .entete-titre { font-size: clamp(1.875rem, 3.5vw, 2.75rem); line-height: 1.12; font-weight: 700; letter-spacing: -.02em; margin-top: .55rem; }
+    .entete-titre span { color: var(--accent); }
+    .entete-cherche { font-size: 1.0625rem; line-height: 1.45; margin-top: .85rem; }
+    .entete-parcours { color: var(--text2); font-size: .9rem; margin-top: .35rem; }
+    .insecable { white-space: nowrap; }
+    .entete-btns { display: flex; gap: .75rem; flex-wrap: wrap; margin-top: 1.15rem; }
+    .entete-btns .btn { padding: .6rem 1.2rem; }
+    .entete-btns .btn-outline { background: rgba(14,16,32,.65); border-color: #5a5f85; }
+    .entete-cote { display: grid; gap: 1rem; padding: 1.15rem 1.25rem; background: rgba(23,26,43,.72); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); border: 1px solid var(--border); border-radius: 14px; }
+    .entete-dispo { padding-bottom: 1rem; border-bottom: 1px solid var(--border); }
+    .entete-dispo b, .entete-outils b { display: block; font-size: .95rem; }
+    .entete-dispo span { display: block; color: var(--text2); font-size: .875rem; margin-top: .1rem; }
+    .entete-outils ul { display: flex; flex-wrap: wrap; gap: .4rem; list-style: none; margin: .6rem 0 0; padding: 0; }
+    .entete-outils li { display: inline-flex; align-items: center; gap: .35rem; padding: .22rem .6rem .22rem .45rem; background: var(--bg3); border: 1px solid var(--border); border-radius: 999px; font-size: .8rem; }
+    #projets { padding-top: 1.75rem; }
+    #projets .section-title { margin-bottom: 1rem; }
+    #projets .section-title::before { content: ""; display: inline-block; width: 4px; height: 1.1em; margin-right: .6rem; border-radius: 2px; background: var(--accent); vertical-align: -.15em; }
+    #projets .section-line { display: none; }
+    .carte { display: flex; flex-direction: column; background: #171a2b; }
+    .carte-image { display: block; aspect-ratio: 12 / 5; overflow: hidden; }
+    .carte-image img { width: 100%; height: 100%; aspect-ratio: auto; object-fit: cover; }
+    .carte-image img[data-img="spatial"], .carte-image img[data-img="sentiment"] { object-fit: contain; }
+    .carte-image img[data-img="code"] { object-position: top; }
+    .carte-image img[data-img="sience"], .carte-image img[data-img="veille"] { object-position: left top; }
+    .carte-image img[data-img="did"] { object-position: center 72%; }
+    .carte-texte { position: relative; display: flex; flex-direction: column; flex: 1; align-items: flex-start; padding: .75rem 1rem 1rem; }
+    .carte-tag { margin-bottom: .4rem; padding: .1rem .55rem; border-radius: 999px; background: rgba(167,139,250,.16); color: #cfc2ff; font-size: .72rem; font-style: normal; font-weight: 600; }
+    .carte-texte b { font-size: 1rem; font-weight: 700; letter-spacing: -.005em; }
+    .carte-texte small { margin-top: auto; padding-top: .3rem; padding-right: 2.4rem; }
+    .carte-fleche { position: absolute; right: .85rem; bottom: .85rem; width: 30px; height: 30px; display: grid; place-items: center; border: 1px solid #5a5f85; border-radius: 50%; color: var(--text); font-size: .9rem; }
+    .carte:hover .carte-fleche { border-color: var(--accent); color: var(--accent); }
+    @media (max-width: 860px) {
+      nav { padding-inline: 1rem; }
+      .entete { padding: 84px 1rem 0; }
+      .entete-in { grid-template-columns: 1fr; gap: 1.25rem; }
+      .carte-image { aspect-ratio: 2 / 1; }
+    }
+    /* ── Fiches projet ── */
+    .modal-overlay { background: #0e1020 var(--courbes, none) center / 100% 100% no-repeat; background-image: var(--courbes, none), radial-gradient(55% 60% at 92% 8%, rgba(124,76,235,.3), transparent 70%), radial-gradient(50% 55% at 4% 100%, rgba(90,60,200,.2), transparent 70%); background-size: 100% 100%, auto, auto; }
+    .pj { background: rgba(14,16,32,.58); --pj-fond: #171a2b; --pj-accent: var(--accent); }
+    .pj-tete { grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(1.5rem, 3.5vw, 3rem); align-items: center; overflow: visible; border-radius: 0; background: none; }
+    .pj-titres { padding: 0; }
+    .pj-titres .carte-tag { display: inline-block; }
+    .pj-titres h2 { color: #fff; margin-top: .25rem; }
+    .pj-titres p { color: var(--text); }
+    .pj-car-cadre { position: relative; aspect-ratio: 16 / 10; overflow: hidden; background: #14172a; border: 1px solid var(--border); border-radius: 14px; }
+    .pj-car-cadre.blanc { background: #fff; }
+    .pj-car-cadre img { display: block; width: 100%; height: 100%; -webkit-user-drag: none; user-select: none; }
+    .pj-car-cadre img { object-fit: contain; }
+    .pj-car-nav { display: flex; align-items: center; justify-content: center; gap: .35rem; margin-top: .5rem; }
+    .pj-car-fl { width: 34px; height: 34px; display: grid; place-items: center; background: rgba(14,16,32,.88); border: 1px solid #5a5f85; border-radius: 50%; color: #fff; font-size: 1rem; cursor: pointer; }
+    .pj-car-fl:hover, .pj-car-fl:focus-visible { border-color: var(--accent); color: var(--accent); }
+    .pj-car-points { display: flex; }
+    .pj-car-points button { width: 26px; height: 26px; padding: 0; background: none; border: 0; cursor: pointer; display: grid; place-items: center; }
+    .pj-car-points button::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: #5a5f85; }
+    .pj-car-points button[aria-current="true"]::before { background: var(--accent); }
+    .pj-car-legende { color: var(--text); font-size: .875rem; line-height: 1.4; margin-top: .4rem; }
+    .pj-car-legende:empty { display: none; }
+    .pj-car .ap-note { margin-top: .25rem; }
+    .pj .pj-resultat { background: rgba(38,32,72,.94); border: 1px solid rgba(167,139,250,.28); border-left: 4px solid var(--accent); border-radius: 10px; }
+    .pj-resultat p { font-size: 1.0625rem; }
+    @media (max-width: 860px) { .pj-tete { grid-template-columns: 1fr; } }
+    /* ── Fiches : lecture et hiérarchie ── */
+    .pj { background: rgba(14,16,32,.82); }
+    .pj-fermer { position: sticky; top: .75rem; right: auto; display: block; width: fit-content; margin: .75rem 0 0 max(1rem, calc((100% - 1200px) / 2 + 1.5rem)); padding: .45rem .8rem; border-color: #5a5f85; font-size: .875rem; }
+    .pj-contenu { max-width: 1200px; padding-top: .9rem; }
+    .pj-tete { grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); align-items: start; }
+    .pj-titres { padding-top: .25rem; }
+    .pj-car-cadre { aspect-ratio: 16 / 9; }
+    .pj h3 { font-size: 1.25rem; margin-bottom: .55rem; }
+    .pj-infos h3 { font-size: 1rem; }
+    .pj-grille { margin-top: clamp(2rem, 3.5vw, 3rem); }
+    .pj-recit > .pj-bloc, .pj-resultat { margin-top: 2rem; }
+    .pj-visuel { margin-top: clamp(2rem, 3.5vw, 3rem); }
+    @media (max-width: 860px) { .pj-tete { grid-template-columns: 1fr; } }
+    .pj { background: linear-gradient(rgba(14,16,32,.68), rgba(14,16,32,.96) 560px) local; }
+    .pj .pj-bloc { padding-top: 1.1rem; border-top: 1px solid var(--border); }
+    .pj .pj-resultat { background: #1b1f36; border: 1px solid rgba(167,139,250,.35); border-left: 3px solid var(--accent); }
+    .pj-titres { align-self: start; }
+    .skill-item { margin-bottom: .35rem; padding: .45rem .6rem; background: var(--bg3); border: 1px solid var(--border); border-radius: 8px; }
+    .skill-item .skill-name { display: block; }
+</style>
 </head>
 <body>
+<canvas id="fond" aria-hidden="true"></canvas>
 
 <div class="scroll-progress" id="scrollProgress"></div>
 
 <!-- ─── NAV ─── -->
 <nav>
-  <div class="nav-logo">Marwane El Bachir</div>
+  <a class="nav-logo" href="#top"><svg viewBox="0 0 16 16" width="18" height="18" aria-hidden="true"><g fill="currentColor"><rect x="1" y="9" width="3.6" height="6" rx="1"/><rect x="6.2" y="5" width="3.6" height="10" rx="1"/><rect x="11.4" y="1" width="3.6" height="14" rx="1"/></g></svg>Marwane El Bachir</a>
   <ul class="nav-links">
-    <li><a href="#about">À propos</a></li>
-    <li><a href="#skills">Compétences</a></li>
-    <li><a href="#projects">Projets</a></li>
+        <li><a href="#skills">Compétences</a></li>
+    <li><a href="#projets" data-projets>Projets</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
+  <a href="CV_EL_BACHIR_Marwane.pdf" class="btn btn-primary nav-cv">Mon CV</a>
 </nav>
 
 <!-- ─── HERO ─── -->
-<section class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-orb one"></div>
-  <div class="hero-orb two"></div>
-  <div class="hero-content fade-in">
-    <div class="hero-badge">🎓 M1 CMI Data Science — Université Paris Nanterre</div>
-    <h1>Marwane <span>El Bachir</span></h1>
-    <p class="hero-sub">Data Analyst · Big Data · Économétrie</p>
-    <p class="hero-desc">
-      Passionné par la donnée, je transforme des jeux de données complexes
-      en insights actionnables — de l'analyse exploratoire aux modèles causaux.<br>
-      <span style="color:var(--accent2);font-size:0.85rem;">🔍 Recherche alternance Data Analyst 2026–2028 · Île-de-France</span>
-    </p>
-    <div class="hero-btns">
-      <a href="#projects" class="btn btn-primary">Voir mes projets →</a>
-      <a href="#contact" class="btn btn-outline">Me contacter</a>
+<section class="entete" id="top">
+  <div class="entete-in">
+    <div class="entete-texte">
+      <h1 class="invisible">Marwane El Bachir</h1>
+      <p class="entete-sur">Portfolio · Data Science</p>
+      <p class="entete-titre">Étudiant en M1 CMI<br><span>Data Science</span> à Paris Nanterre</p>
+      <p class="entete-cherche">Je cherche un stage de 6&nbsp;mois dès janvier&nbsp;2027, puis une alternance en&nbsp;<span class="insecable">2027-2028</span>, en <span class="insecable">Île-de-France</span>.</p>
+      <p class="entete-parcours">Après une L1 Économie à Paris 1, deux stages data : SIENCE et Stéphane Plaza Immobilier.</p>
+      <div class="entete-btns">
+        <a href="#projets" class="btn btn-primary" id="voirProjets">Voir mes projets</a>
+        <a href="#contact" class="btn btn-outline">Me contacter</a>
+      </div>
     </div>
+    <aside class="entete-cote">
+      <div class="entete-dispo"><b>Disponible pour un stage</b><span>Dès janvier 2027, 6 mois</span></div>
+      <div class="entete-outils"><b>Mes outils</b><ul><li><img src="images/outils/python.svg" alt="" width="16" height="16">Python</li><li><img src="images/outils/r.svg" alt="" width="16" height="16">R</li><li><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><g fill="none" stroke="#a78bfa" stroke-width="1.6"><ellipse cx="8" cy="3.5" rx="6" ry="2.5"/><path d="M2 3.5v9c0 1.4 2.7 2.5 6 2.5s6-1.1 6-2.5v-9M2 8c0 1.4 2.7 2.5 6 2.5s6-1.1 6-2.5"/></g></svg>SQL</li><li><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><g fill="#f2c811"><rect x="1.5" y="8" width="3.5" height="7" rx="1"/><rect x="6.2" y="4.5" width="3.5" height="10.5" rx="1"/><rect x="11" y="1" width="3.5" height="14" rx="1"/></g></svg>Power BI</li><li><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><rect width="16" height="16" rx="3.5" fill="#3f9b3f"/><text x="8" y="12" text-anchor="middle" font-size="11" font-weight="700" fill="#fff" font-family="Inter,Arial,sans-serif">Q</text></svg>QGIS</li><li><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><rect width="16" height="16" rx="3.5" fill="#2f7fd1"/><text x="8" y="12" text-anchor="middle" font-size="11" font-weight="700" fill="#fff" font-family="Inter,Arial,sans-serif">S</text></svg>SAS</li><li><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><rect width="16" height="16" rx="3.5" fill="#1d7a45"/><text x="8" y="12" text-anchor="middle" font-size="11" font-weight="700" fill="#fff" font-family="Inter,Arial,sans-serif">X</text></svg>Excel</li></ul></div>
+    </aside>
   </div>
 </section>
 
-<!-- ─── ABOUT ─── -->
-<section id="about">
-  <div class="section-inner">
-    <div class="section-title fade-in">À <span>propos</span></div>
-    <div class="section-line fade-in"></div>
-    <div class="about-grid fade-in">
-      <div class="about-text">
-        <p>
-          Étudiant en <strong>M1 CMI Data Science</strong> à l'Université Paris Nanterre,
-          après une L1 Économie à Paris 1 Panthéon-Sorbonne. Je me spécialise dans
-          l'analyse de données, la modélisation statistique et les pipelines de données.
-        </p>
-        <p>
-          Mon parcours combine une solide culture économique et des compétences techniques
-          en C, R, Python, SQL, Power BI et QGIS — des données brutes jusqu'à la visualisation
-          et l'aide à la décision.
-        </p>
-        <p>
-          Je recherche une <strong>alternance Data Analyst 2026–2028</strong> en Île-de-France.
-          Permis B · Mobile.
-        </p>
-        <div class="about-tags">
-          <span class="tag">C</span>
-          <span class="tag">R</span>
-          <span class="tag">Python</span>
-          <span class="tag">SQL</span>
-          <span class="tag">Java</span>
-          <span class="tag">JavaScript</span>
-          <span class="tag">Power BI</span>
-          <span class="tag">QGIS</span>
-          <span class="tag">SAS</span>
-          <span class="tag">Excel</span>
-          <span class="tag">LaTeX</span>
-          <span class="tag">Économétrie</span>
-          <span class="tag">SIG / Spatial</span>
-          <span class="tag">IA / Prompt Engineering</span>
-        </div>
-      </div>
-      <div class="about-stats">
-        <div class="stat-card">
-          <div class="stat-num">8</div>
-          <div class="stat-label">Projets data réalisés</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-num">6+</div>
-          <div class="stat-label">Langages (C · R · Python · SQL · Java · JS)</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-num">M1 CMI</div>
-          <div class="stat-label">Data Science — Paris Nanterre</div>
-        </div>
-      </div>
-    </div>
+<!-- ─── PROJETS ─── -->
+<section id="projets" class="projets-zone">
+  <div class="section-inner projets-inner">
+    <div class="section-title">Mes <span>projets</span></div>
+    <div class="section-line"></div>
+    <div class="cartes" id="cartes"></div>
   </div>
 </section>
 
@@ -498,263 +673,63 @@
       <div class="skill-group" data-group="langages">
         <h3>Langages</h3>
         <div class="skill-item" data-skill="C" data-info="Mon langage le plus maîtrisé. Utilisé pour implémenter et benchmarker des algorithmes de tri (tri à bulle, cocktail…) avec mesure précise des temps d'exécution.">
-          <div class="skill-header"><span class="skill-name">C</span><span class="skill-pct">70%</span></div>
-          <div class="skill-bar"><div class="skill-fill" style="width:70%"></div></div>
+          <span class="skill-name">C</span>
         </div>
         <div class="skill-item" data-skill="R / R Markdown" data-info="Très utilisé dans mes projets data : analyses statistiques, économétrie (DiD), cartographie spatiale, visualisation avec ggplot2, rapports R Markdown.">
-          <div class="skill-header"><span class="skill-name">R / R Markdown</span><span class="skill-pct">78%</span></div>
-          <div class="skill-bar"><div class="skill-fill" style="width:78%"></div></div>
+          <span class="skill-name">R / R Markdown</span>
         </div>
         <div class="skill-item" data-skill="Python" data-info="Utilisé pour des pipelines de données, analyse de sentiment (NLP), scripts d'automatisation et visualisation. Bases solides, en progression continue.">
-          <div class="skill-header"><span class="skill-name">Python</span><span class="skill-pct">69%</span></div>
-          <div class="skill-bar"><div class="skill-fill" style="width:69%"></div></div>
+          <span class="skill-name">Python</span>
         </div>
         <div class="skill-item" data-skill="SQL" data-info="Maîtrise des requêtes SELECT, JOIN, GROUP BY, sous-requêtes, agrégations. Capable d'interroger et manipuler des bases de données relationnelles.">
-          <div class="skill-header"><span class="skill-name">SQL</span><span class="skill-pct">85%</span></div>
-          <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
+          <span class="skill-name">SQL</span>
         </div>
         <div class="skill-item" data-skill="Java" data-info="Programmation orientée objet, structures de données, algorithmes de base. Utilisé en cours de développement logiciel.">
-          <div class="skill-header"><span class="skill-name">Java</span><span class="skill-pct">72%</span></div>
-          <div class="skill-bar"><div class="skill-fill" style="width:72%"></div></div>
+          <span class="skill-name">Java</span>
         </div>
       </div>
 
       <div class="skill-group" data-group="outils">
         <h3>Librairies & Outils</h3>
         <div class="skill-item" data-skill="ggplot2 · tidyverse · sf" data-info="Librairies R au cœur de mes projets : visualisation avancée, manipulation de données tabulaires et géospatiales (sf pour les shapefiles et jointures spatiales).">
-          <div class="skill-header"><span class="skill-name">ggplot2 · tidyverse · sf</span><span class="skill-pct">88%</span></div>
-          <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
+          <span class="skill-name">ggplot2 · tidyverse · sf</span>
         </div>
         <div class="skill-item" data-skill="LaTeX · Beamer · RMarkdown" data-info="Rédaction de rapports scientifiques et de présentations (Beamer) en LaTeX. Utilisé dans plusieurs projets pour les rapports finaux et les slides.">
-          <div class="skill-header"><span class="skill-name">LaTeX · Beamer · RMarkdown</span><span class="skill-pct">90%</span></div>
-          <div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div>
+          <span class="skill-name">LaTeX · Beamer · RMarkdown</span>
         </div>
         <div class="skill-item" data-skill="fixest · stargazer · did" data-info="Librairies R pour l'économétrie : fixest pour les régressions à effets fixes, stargazer pour les tableaux de résultats, did/staggered pour les DiD hétérogènes.">
-          <div class="skill-header"><span class="skill-name">fixest · stargazer · did</span><span class="skill-pct">85%</span></div>
-          <div class="skill-bar"><div class="skill-fill" style="width:72%"></div></div>
+          <span class="skill-name">fixest · stargazer · did</span>
         </div>
         <div class="skill-item" data-skill="pandas · numpy · matplotlib" data-info="Librairies Python pour la manipulation et visualisation de données. Utilisées dans le projet d'analyse de sentiment et de benchmarking.">
-          <div class="skill-header"><span class="skill-name">pandas · numpy · matplotlib</span><span class="skill-pct">62%</span></div>
-          <div class="skill-bar"><div class="skill-fill" style="width:62%"></div></div>
+          <span class="skill-name">pandas · numpy · matplotlib</span>
         </div>
         <div class="skill-item" data-skill="Git" data-info="Gestion de versions : commits, branches, GitHub. Utilisé pour versionner mes projets et publier du code.">
-          <div class="skill-header"><span class="skill-name">Git</span><span class="skill-pct">55%</span></div>
-          <div class="skill-bar"><div class="skill-fill" style="width:55%"></div></div>
+          <span class="skill-name">Git</span>
         </div>
         <div class="skill-item" data-skill="Excel · Pack Office" data-info="Manipulation de tableaux, formules avancées, tableaux croisés dynamiques, mise en forme. Utilisé pour explorer et présenter des données.">
-          <div class="skill-header"><span class="skill-name">Excel · Pack Office</span><span class="skill-pct">75%</span></div>
-          <div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div>
+          <span class="skill-name">Excel · Pack Office</span>
         </div>
         <div class="skill-item" data-skill="Power BI · QGIS · SAS" data-info="Initiation à Power BI (tableaux de bord simples), QGIS pour la visualisation spatiale, SAS pour le traitement statistique. En cours d'approfondissement.">
-          <div class="skill-header"><span class="skill-name">Power BI · QGIS · SAS</span><span class="skill-pct">67%</span></div>
-          <div class="skill-bar"><div class="skill-fill" style="width:67%"></div></div>
+          <span class="skill-name">Power BI · QGIS · SAS</span>
         </div>
       </div>
 
       <div class="skill-group" data-group="domaines">
         <h3>Domaines & Savoir-faire</h3>
         <div class="skill-item" data-skill="Analyse & visualisation de données" data-info="Cœur de mes projets : exploration, nettoyage, transformation et représentation graphique de données réelles (pollution, immobilier, marchés financiers).">
-          <div class="skill-header"><span class="skill-name">Analyse & visualisation</span><span class="skill-pct">82%</span></div>
-          <div class="skill-bar"><div class="skill-fill" style="width:82%"></div></div>
+          <span class="skill-name">Analyse & visualisation</span>
         </div>
         <div class="skill-item" data-skill="Statistiques & économétrie" data-info="Régression linéaire, DiD, modèles à effets fixes, analyse causale. Appliqués sur des données réelles dans plusieurs projets universitaires.">
-          <div class="skill-header"><span class="skill-name">Statistiques & économétrie</span><span class="skill-pct">78%</span></div>
-          <div class="skill-bar"><div class="skill-fill" style="width:78%"></div></div>
+          <span class="skill-name">Statistiques & économétrie</span>
         </div>
         <div class="skill-item" data-skill="IA & Prompt Engineering" data-info="À l'aise avec les LLMs (ChatGPT, Claude, Copilot) : formulation de prompts efficaces, utilisation de l'IA comme outil de productivité dans les projets data et code.">
-          <div class="skill-header"><span class="skill-name">IA & Prompt Engineering</span><span class="skill-pct">92%</span></div>
-          <div class="skill-bar"><div class="skill-fill" style="width:72%"></div></div>
+          <span class="skill-name">IA & Prompt Engineering</span>
         </div>
         <div class="skill-item" data-skill="Données géospatiales (SIG)" data-info="Traitement de shapefiles, jointures spatiales, cartographie thématique avec sf, geodata et rnaturalearth. Mis en pratique sur deux projets R.">
-          <div class="skill-header"><span class="skill-name">Données géospatiales (SIG)</span><span class="skill-pct">71%</span></div>
-          <div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div>
+          <span class="skill-name">Données géospatiales (SIG)</span>
         </div>
         <div class="skill-item" data-skill="Adaptabilité aux nouvelles techs" data-info="Capacité à apprendre rapidement de nouveaux outils, librairies et technologies. Autonomie dans l'auto-formation (documentation, tutoriels, IA).">
-          <div class="skill-header"><span class="skill-name">Adaptabilité / Nouvelles techs</span><span class="skill-pct">85%</span></div>
-          <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ─── PROJECTS ─── -->
-<section id="projects">
-  <div class="section-inner">
-    <div class="section-title fade-in">Mes <span>projets</span></div>
-    <div class="section-line fade-in"></div>
-    <div class="projects-grid fade-in">
-
-      <!-- Projet SIENCE — Expérience professionnelle -->
-      <div class="project-card">
-        <div class="project-header">
-          <span class="project-icon">🧾</span>
-          <span class="project-stars">💼 Stage professionnel</span>
-        </div>
-        <div class="project-title">Application CRM & Facturation — SIENCE</div>
-        <div class="project-desc">
-          Conception et développement d'une application web de CRM et facturation pour une PME,
-          avec automatisation d'une partie du processus de facturation et analyse des
-          indicateurs clés de performance pour l'aide au pilotage.
-        </div>
-        <div class="project-tags">
-          <span class="project-tag">React</span>
-          <span class="project-tag">Chart.js</span>
-          <span class="project-tag">VBA</span>
-          <span class="project-tag purple">CRM</span>
-          <span class="project-tag green">Automatisation</span>
-          <span class="project-tag">KPI / Reporting</span>
-        </div>
-        <div class="project-footer">
-          <div class="project-lang"><span class="lang-dot lang-js"></span> JavaScript</div>
-        </div>
-      </div>
-
-      <!-- Projet 1 -->
-      <div class="project-card">
-        <div class="project-header">
-          <span class="project-icon">📰</span>
-          <span class="project-stars">★★★ Top projet</span>
-        </div>
-        <div class="project-title">Analyse de Sentiment de Marché</div>
-        <div class="project-desc">
-          Pipeline complet de NLP : récupération d'actualités économiques via NewsAPI,
-          analyse de sentiment (positif/neutre/négatif) avec TextBlob & NLTK,
-          visualisation Matplotlib et export CSV. Conçu pour portfolio CMI D3S Big Data.
-        </div>
-        <div class="project-tags">
-          <span class="project-tag">Python</span>
-          <span class="project-tag">NLP</span>
-          <span class="project-tag">TextBlob</span>
-          <span class="project-tag">pandas</span>
-          <span class="project-tag">API REST</span>
-          <span class="project-tag green">Tests unitaires</span>
-        </div>
-        <div class="project-footer">
-          <div class="project-lang"><span class="lang-dot lang-python"></span> Python</div>
-        </div>
-      </div>
-
-      <!-- Projet 2 — Spatial (1/2) -->
-      <div class="project-card">
-        <div class="project-header">
-          <span class="project-icon">🗺️</span>
-          <span class="project-stars">★★★ Série 1/2</span>
-        </div>
-        <div class="project-title">Pollution & Immobilier — Analyse Spatiale <span style="font-size:0.75em;color:var(--accent3);font-weight:600;">(1/2)</span></div>
-        <div class="project-desc">
-          Cartographie des établissements industriels IREP et de leurs émissions.
-          Résultat clé : les modèles OLS classiques sont <strong>biaisés</strong>
-          (les installations ne sont pas réparties aléatoirement). → <em>Voir suite (2/2)</em>
-        </div>
-        <div class="project-tags">
-          <span class="project-tag">R</span>
-          <span class="project-tag">sf</span>
-          <span class="project-tag">ggplot2</span>
-          <span class="project-tag purple">Géospatial</span>
-          <span class="project-tag">Shapefile</span>
-          <span class="project-tag">arrow / parquet</span>
-        </div>
-        <div class="project-footer">
-          <div class="project-lang"><span class="lang-dot lang-r"></span> R</div>
-        </div>
-      </div>
-
-      <!-- Projet 3 — DiD (2/2) -->
-      <div class="project-card">
-        <div class="project-header">
-          <span class="project-icon">🏠</span>
-          <span class="project-stars">★★★ Série 2/2</span>
-        </div>
-        <div class="project-title">Pollution & Immobilier — Modèle Causal DiD <span style="font-size:0.75em;color:var(--accent2);font-weight:600;">(2/2)</span></div>
-        <div class="project-desc">
-          Suite du projet spatial : application de la méthode
-          <strong>Difference-in-Differences</strong> (Callaway-Sant'Anna) pour estimer
-          causalement l'effet des installations polluantes sur les prix immobiliers (DVF+).
-        </div>
-        <div class="project-tags">
-          <span class="project-tag">R</span>
-          <span class="project-tag purple">Économétrie</span>
-          <span class="project-tag purple">DiD</span>
-          <span class="project-tag">sf / SIG</span>
-          <span class="project-tag">fixest</span>
-          <span class="project-tag green">Rapport LaTeX</span>
-        </div>
-        <div class="project-footer">
-          <div class="project-lang"><span class="lang-dot lang-r"></span> R</div>
-        </div>
-      </div>
-
-      <!-- Projet 4 -->
-      <div class="project-card">
-        <div class="project-header">
-          <span class="project-icon">🌫️</span>
-          <span class="project-stars">★★ Bon projet</span>
-        </div>
-        <div class="project-title">Prédiction de la Pollution Atmosphérique</div>
-        <div class="project-desc">
-          Modélisation prédictive des particules fines PM2.5 et PM10 à partir de données
-          OpenAQ (API publique). Nettoyage de données horaires, analyse de corrélation,
-          régression linéaire et cartographie des résultats.
-        </div>
-        <div class="project-tags">
-          <span class="project-tag">R</span>
-          <span class="project-tag">tidyverse</span>
-          <span class="project-tag purple">Régression</span>
-          <span class="project-tag">API OpenAQ</span>
-          <span class="project-tag">corrplot</span>
-          <span class="project-tag green">Cartographie</span>
-        </div>
-        <div class="project-footer">
-          <div class="project-lang"><span class="lang-dot lang-r"></span> R</div>
-        </div>
-      </div>
-
-      <!-- Projet 5 -->
-      <div class="project-card">
-        <div class="project-header">
-          <span class="project-icon">⚖️</span>
-          <span class="project-stars">★★ Bon projet</span>
-        </div>
-        <div class="project-title">Concentration des Marchés — Métaux Critiques</div>
-        <div class="project-desc">
-          Analyse de l'évolution de l'indice HHI (Herfindahl-Hirschman) pour 5 métaux
-          critiques (1994–2020). Visualisation de la concentration et des dynamiques
-          concurrentielles à l'échelle mondiale. Rapport CMI S4 rédigé.
-        </div>
-        <div class="project-tags">
-          <span class="project-tag">R</span>
-          <span class="project-tag">ggplot2</span>
-          <span class="project-tag purple">Économie</span>
-          <span class="project-tag">dplyr</span>
-          <span class="project-tag green">Visualisation</span>
-        </div>
-        <div class="project-footer">
-          <div class="project-lang"><span class="lang-dot lang-r"></span> R</div>
-        </div>
-      </div>
-
-      <!-- Projet 6 -->
-      <div class="project-card">
-        <div class="project-header">
-          <span class="project-icon">🔬</span>
-          <span class="project-stars">★ Projet académique</span>
-        </div>
-        <div class="project-title">Analyseur de Complexité de Code</div>
-        <div class="project-desc">
-          Outil d'analyse statique Python calculant la complexité cyclomatique,
-          la profondeur de nidification et le nombre de lignes de code.
-          Génère des rapports texte automatisés et des suggestions d'amélioration.
-        </div>
-        <div class="project-tags">
-          <span class="project-tag">Python</span>
-          <span class="project-tag">Analyse statique</span>
-          <span class="project-tag">Génie logiciel</span>
-          <span class="project-tag green">Rapport auto</span>
-        </div>
-        <div class="project-footer">
-          <div class="project-lang"><span class="lang-dot lang-python"></span> Python</div>
+          <span class="skill-name">Adaptabilité / Nouvelles techs</span>
         </div>
       </div>
 
@@ -768,9 +743,9 @@
     <div class="section-title fade-in" style="text-align:center">Me <span>contacter</span></div>
     <div class="section-line fade-in" style="margin:0 auto 2.5rem"></div>
     <div class="contact-card fade-in">
-      <h3>Disponible pour une alternance Data Analyst 2026–2028 📊</h3>
+      <h3>Disponible pour un stage de 6 mois dès janvier 2027, puis une alternance 2027-2028 📊</h3>
       <p>
-        Data Analyst · Île-de-France · Ouvert aux opportunités en data, BI, analyse économique ou Big Data.<br>
+        Data Analyst · Île-de-France · Ouvert aux opportunités en data, BI et analyse économique.<br>
         N'hésitez pas à me contacter pour discuter d'un projet ou d'une collaboration.
       </p>
       <div class="contact-links">
@@ -798,39 +773,14 @@
   <div class="skill-popup-text" id="skillPopupText"></div>
 </div>
 
-<!-- ─── MODAL ─── -->
-<div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
-  <div class="modal" id="modalBox">
-    <div class="modal-header">
-      <div>
-        <div style="font-size:1.8rem;margin-bottom:0.3rem" id="modalIcon"></div>
-        <div class="modal-title" id="modalTitle"></div>
-      </div>
-      <button class="modal-close" onclick="closeModalDirect()">✕</button>
-    </div>
-    <div class="modal-body">
-      <div class="modal-section">
-        <div class="modal-section-title">Description</div>
-        <p id="modalDesc"></p>
-      </div>
-      <div class="modal-section">
-        <div class="modal-section-title">Ce que j'ai fait</div>
-        <div class="modal-results" id="modalResults"></div>
-      </div>
-      <div class="modal-section">
-        <div class="modal-section-title">Technologies utilisées</div>
-        <div class="modal-tags" id="modalTags"></div>
-      </div>
-      <div class="modal-section">
-        <div class="modal-section-title">Compétences démontrées</div>
-        <p id="modalSkills"></p>
-      </div>
-      <a href="#" class="modal-github" id="modalLink" target="_blank">🔗 Voir sur GitHub</a>
-    </div>
+<!-- ─── PAGE PROJET ─── -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="pj" id="modalBox" role="dialog" aria-modal="true" aria-labelledby="ficheTitre">
+    <button class="pj-fermer" onclick="closeModalDirect()" aria-label="Retour aux projets">← Retour aux projets</button>
+    <div class="pj-contenu" id="pjContenu"></div>
   </div>
 </div>
 
-<!-- ─── BACK TO TOP ─── -->
 <a href="#" class="to-top" id="toTop" aria-label="Retour en haut">↑</a>
 
 <!-- ─── FOOTER ─── -->
@@ -847,19 +797,6 @@
     });
   }, { threshold: 0.1 });
   document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-
-  const skillObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.querySelectorAll('.skill-fill').forEach(bar => {
-          const w = bar.style.width;
-          bar.style.width = '0';
-          setTimeout(() => { bar.style.width = w; }, 100);
-        });
-      }
-    });
-  }, { threshold: 0.3 });
-  document.querySelectorAll('.skill-group').forEach(el => skillObserver.observe(el));
 
   // ── Skill item : popup au clic ──
   let skillPopupOpen = false;
@@ -890,130 +827,213 @@
   document.addEventListener('click', () => { if (skillPopupOpen) closeSkillPopup(); });
 
   // ── Données des projets pour la modale ──
+  const GH = 'https://github.com/marwane93600/';
+  const gaufre = () => '<div class="ap-gaufre">' + Array(100).fill(0).map((_, i) => '<i class="' + (i < 8 ? 'pos' : i < 17 ? 'neg' : '') + '"></i>').join('') + '</div><div class="ap-legende"><span><b class="pos"></b>8 positifs</span><span><b class="neg"></b>9 négatifs</span><span><b></b>83 neutres</span></div>';
+  const barresH = l => { const m = Math.max(...l.map(x => x[1])); return '<div class="ap-barres">' + l.map(x => '<div><span>' + x[0] + '</span><i style="width:' + (x[1] / m * 68) + '%"></i><b>' + (x[2] || x[1]) + '</b></div>').join('') + '</div>'; };
+
+
   const projects = [
     {
-      icon: "🧾",
-      title: "Application CRM & Facturation — SIENCE",
-      desc: "Stage chez SIENCE : conception et développement d'une application web de gestion CRM et facturation. Automatisation d'une partie du processus de facturation. Volet data : extraction, structuration et analyse des indicateurs clés de performance, avec production de présentations pour appuyer le pilotage et la prise de décision.",
-      results: `<strong>✔ Application web complète :</strong> CRM et facturation développés avec React et Chart.js<br>
-                <strong>✔ Automatisation :</strong> partie du processus de facturation automatisée en VBA<br>
-                <strong>✔ Analyse data :</strong> extraction, structuration et analyse des indicateurs clés de performance<br>
-                <strong>✔ Communication :</strong> présentations et analyses data produites pour la prise de décision`,
-      tags: ["React", "Chart.js", "VBA", "CRM", "Automatisation", "KPI", "Reporting"],
-      skills: "Développement web (React), visualisation de données (Chart.js), automatisation de processus métier (VBA), analyse d'indicateurs de performance, communication de résultats data à des décideurs.",
-      link: null
+      img: 'did', tag: 'Économétrie', titre: 'Pollution & Immobilier : Modèle Causal DiD (2/2)',
+      accroche: "La suite de l'analyse spatiale : un effet significatif, puis plus rien.",
+      contexte: "Licence 3, économétrie appliquée. R, QGIS, fixest, did. Données DVF+ et registre IREP.",
+      but: "Mesurer si l'ouverture d'une installation polluante à proximité fait réellement baisser le prix d'une maison.",
+      probleme: "Les sites ne sont pas placés au hasard : ils sont surtout dans des zones économiquement actives, où les prix sont déjà plus hauts. Une simple comparaison donne donc une réponse trompeuse.",
+      fait: ["Croisement des ventes de maisons et du registre des installations, avec calcul des distances", "Construction d'un panel de 1,26 million d'observations", "Différence de différences avec effets fixes par maison et par année", "Nouveau design en donut (3-5 km contre 10-20 km), sur 304 588 observations", "Vérification par une étude d'événement de Callaway et Sant'Anna"],
+      resultat: "L'effet passe de -0,29 % (p = 0,007) à +0,19 % non significatif (p = 0,392). Je ne trouve donc pas d'effet causal significatif, sans pouvoir prouver qu'il n'y en a aucun : les dates d'ouverture sont estimées à partir du SIREN, pas observées, et le dernier échantillon est plus petit.",
+      apercu: '<div class="ap-etapes"><div><small>Régression</small><b>+9,7 %</b><span>trompeur</span></div><div><small>Différence de différences</small><b>-0,29 %</b><span>significatif</span></div><div class="fort"><small>Design en donut</small><b>+0,19 %</b><span>non significatif</span></div></div>',
+      tags: ['R', 'Économétrie', 'DiD', 'fixest', 'QGIS', 'LaTeX'],
+      projet: GH + 'pollution-immobilier-did', rapport: GH + 'pollution-immobilier-did/blob/main/report/Rapport.pdf'
     },
     {
-      icon: "📰",
-      title: "Analyse de Sentiment de Marché",
-      desc: "Pipeline NLP complet pour récupérer des actualités économiques en français via l'API NewsAPI, les analyser automatiquement (polarité entre -1 et +1) et classer chaque article en Positif, Neutre ou Négatif. Résultats exportés en CSV et graphique PNG.",
-      results: `<strong>✔ Pipeline end-to-end :</strong> de l'API REST jusqu'au graphique final<br>
-                <strong>✔ Tests unitaires :</strong> couverture avec pytest<br>
-                <strong>✔ Gestion des secrets :</strong> clé API via .env (bonne pratique pro)<br>
-                <strong>✔ Code propre :</strong> README complet, .gitignore, structure modulaire`,
-      tags: ["Python", "NLP", "TextBlob", "NLTK", "pandas", "matplotlib", "requests", "API REST", "pytest", "dotenv"],
-      skills: "Traitement automatique du langage, pipeline de données, bonnes pratiques de développement (tests, gestion des secrets, documentation).",
-      link: "https://github.com/marwane93600/analyse-sentiment-marche"
+      img: 'sience', tag: 'Outil métier', titre: 'Application CRM & Facturation : SIENCE',
+      accroche: "L'outil que j'ai créé en stage pour suivre les clients et facturer.",
+      contexte: "Stage de juin à juillet 2026 chez SIENCE. Excel, VBA, React, Chart.js.",
+      but: "Réunir dans un même outil le suivi des dossiers clients, la base de données et la facturation.",
+      probleme: "Une même demande suit deux chemins en parallèle et passe par plusieurs pôles de l'équipe. Il fallait voir où en est chaque dossier, et produire les factures et les relevés sans tout refaire à la main.",
+      fait: ["Outil Excel et VBA qui génère les factures et les relevés de répartition", "Application web en trois espaces reliés à une seule base de données", "Calcul automatique du statut de chaque dossier : non traité, en cours ou traité", "Tableau de bord des indicateurs clés avec Chart.js", "Rapports et présentations d'activité, et guide d'utilisation"],
+      resultat: "Un outil pensé de bout en bout pour le travail de l'équipe. Ma lettre de recommandation parle de ma capacité à « transformer nos problématiques opérationnelles en solutions concrètes ».",
+      apercu: null,
+      tags: ['React', 'Chart.js', 'VBA', 'Excel', 'Automatisation', 'KPI'],
+      projet: null
     },
     {
-      icon: "🗺️",
-      title: "Pollution & Immobilier — Analyse Spatiale (1/2)",
-      desc: "Cartographie des établissements industriels français (IREP) : émissions, rejets, déchets. Résultat clé : les modèles OLS classiques sont biaisés — les installations ne sont pas réparties aléatoirement. Ce constat a motivé la conception d'un modèle causal (voir 2/2).",
-      results: `<strong>✔ Données shapefile :</strong> traitement de fichiers géographiques réels (CLC12 France)<br>
-                <strong>✔ Jointures spatiales :</strong> matching entre établissements et zones géographiques<br>
-                <strong>✔ Multiples sources :</strong> émissions, rejets, déchets — consolidation de 6 fichiers CSV<br>
-                <strong>✔ Conclusion :</strong> modèle OLS biaisé → passage à la méthode DiD (Projet 2/2)`,
-      tags: ["R", "sf", "ggplot2", "arrow", "parquet", "geodata", "rnaturalearth", "stargazer", "SIG"],
-      skills: "Analyse géospatiale, traitement de données multi-sources, cartographie avec R, détection de biais dans les modèles de régression.",
-      link: "https://github.com/marwane93600/analyse-spatiale"
+      img: 'immersio', collectif: true, tag: 'Gestion de projet', titre: 'IMMERSIO : data center sous-marin à Marseille',
+      accroche: 'Cadrer le premier data center sous-marin pilote français : 49,3 M€ hors risques.',
+      contexte: "Gestion de projet, en groupe, M1. Projet pédagogique, chiffres construits sur nos hypothèses.",
+      but: "Prouver qu'un data center sous-marin pilote de 5 MW peut fonctionner de façon fiable et propre à Marseille.",
+      probleme: "Créer de la capacité de calcul sans saturer le réseau électrique, sans consommer d'eau douce et dans un territoire où les data centers sont déjà contestés.",
+      fait: ["Analyse du besoin et comparaison de quatre scénarios", "Découpage en tâches, chacune chiffrée en personnes, en jours et en achats", "Calendrier en quatre phases sur 60 mois, avec trois décisions clés", "Matrice des risques, avec une provision selon leur probabilité"],
+      resultat: "Un budget de 49,3 M€ hors risques et hors rémunération, estimé à 53,8 M€ risques compris, et quatre objectifs mesurables : au moins 2 fois moins de pannes qu'un site terrestre comparable, aucune eau douce consommée, le budget tenu et une mise en service au mois 36.",
+      apercu: null,
+      tags: ['Gestion de projet', 'Chiffrage', 'Planning', 'Risques'],
+      projet: 'presentations/IMMERSIO-rapport.pdf'
     },
     {
-      icon: "🏠",
-      title: "Pollution & Immobilier — Modèle Causal DiD (2/2)",
-      desc: "Suite de l'analyse spatiale : la méthode Difference-in-Differences (Callaway-Sant'Anna) est appliquée pour estimer causalement l'effet des installations IREP sur les prix immobiliers (DVF+), en s'affranchissant du biais identifié en partie 1/2.",
-      results: `<strong>✔ Pipeline en 6 étapes :</strong> nettoyage → matching spatial → construction de panel → estimations<br>
-                <strong>✔ Méthode avancée :</strong> DiD avec Callaway-Sant'Anna et Sun-Abraham (hétérogénéité)<br>
-                <strong>✔ Données réelles :</strong> transactions immobilières DVF+ + données IREP (établissements)<br>
-                <strong>✔ Rapport complet :</strong> LaTeX + présentation Beamer`,
-      tags: ["R", "tidyverse", "sf", "fixest", "did", "ggplot2", "LaTeX", "Beamer", "DiD", "Économétrie causale"],
-      skills: "Inférence causale, économétrie avancée, données spatiales, communication scientifique (LaTeX/Beamer), reproductibilité des analyses.",
-      link: "https://github.com/marwane93600/pollution-immobilier-did"
+      img: 'spatial', tag: 'Géo-data', titre: 'Pollution & Immobilier : Analyse Spatiale (1/2)',
+      accroche: 'La proximité d\'un site polluant change-t-elle le prix des maisons ?',
+      contexte: "Licence 3. R, sf, QGIS. Registre IREP, DVF et occupation des sols, près de 800 Mo de données.",
+      but: "Voir si la proximité d'une installation polluante influence le prix des maisons, dans quel sens et avec quelle ampleur.",
+      probleme: "Deux effets s'opposent : la nuisance peut faire baisser les prix, mais ces sites sont souvent dans des zones actives où les prix sont plus hauts. Il fallait aussi relier des fichiers lourds de formats différents.",
+      fait: ["Nettoyage et croisement de données spatiales (parquet, shapefile)", "Calcul des distances entre les maisons et les sites", "Comparaison des prix selon la distance et l'occupation des sols, avec des cartes comme étape de description", "Régressions sur les prix, avec et sans effets fixes"],
+      resultat: "La proximité d'un site va de pair avec des prix plus élevés (+9,7 %). C'est une corrélation biaisée par l'urbanisation, et c'est ce qui m'a conduit au modèle causal du projet suivant.",
+      apercu: '<div class="ap-etapes"><div><small>Moins de 5 km d\'un site</small><b>+0,097</b><span>sur le log du prix, significatif</span></div><div><small>Chaque km de plus</small><b>-0,009</b><span>sur le log du prix, significatif</span></div><div><small>Échantillon</small><b>50 000</b><span>ventes, R² de 0,42</span></div></div>',
+      tags: ['R', 'sf', 'QGIS', 'SIG', 'ggplot2'],
+      projet: GH + 'analyse-spatiale', rapport: GH + 'analyse-spatiale/blob/main/outputs/Rapport.pdf'
     },
     {
-      icon: "🌫️",
-      title: "Prédiction de la Pollution Atmosphérique",
-      desc: "Collecte, nettoyage et modélisation de données de pollution de l'air (PM2.5 et PM10) à Paris, issues de l'API OpenAQ. Analyse temporelle horaire, corrélations entre polluants, régression linéaire et cartographie des résultats.",
-      results: `<strong>✔ Collecte via API :</strong> données horaires OpenAQ (pollution de l'air en temps réel)<br>
-                <strong>✔ Nettoyage complet :</strong> gestion des valeurs manquantes, pivot wide format<br>
-                <strong>✔ Modèle de régression :</strong> prédiction PM2.5 avec résultats illustrés<br>
-                <strong>✔ Cartographie :</strong> visualisation géographique des stations et niveaux de pollution`,
-      tags: ["R", "tidyverse", "lubridate", "httr", "corrplot", "stargazer", "rvest", "gridExtra", "API OpenAQ"],
-      skills: "Collecte de données via API, analyse temporelle, modélisation prédictive, visualisation géographique.",
-      link: "https://github.com/marwane93600/prediction-pollution"
+      img: 'air', tag: 'Data analyse', titre: "Pollution de l'air à Paris : météo ou trafic ?",
+      accroche: 'Ce qui explique le pic de particules fines du 22 novembre.',
+      contexte: "Licence 3. R, API OpenAQ et Open-Meteo. Station Paris Les Halles, du 26 octobre au 26 novembre 2025.",
+      but: "Comprendre ce qui explique les particules fines à Paris : la météo, la pollution de fond ou le trafic.",
+      probleme: "Le trafic n'est pas mesuré directement, et le PM10 n'est disponible que sur 122 des 662 heures, ce qui limite les comparaisons entre modèles.",
+      fait: ["Collecte par API et fusion heure par heure de la pollution et de la météo", "Création d'indicateurs d'heure de pointe et de week-end", "Trois régressions emboîtées sur les PM2.5", "Cartes, corrélations et graphiques pour lire le pic de novembre"],
+      resultat: "Le pic du 22 novembre coïncide avec un air froid et un vent faible, et l'heure de pointe ne ressort pas. C'est une étude explicative, sur une seule station et un seul mois : je ne généralise pas.",
+      apercu: barresH([['Météo, 662 h', .128, '0,128'], ['+ PM10, 122 h', .767, '0,767'], ['+ trafic, 122 h', .801, '0,801']]) + '<p class="ap-note">Part de la variation expliquée (R²). Le saut vient surtout du PM10, qui contient les PM2.5 : il n\'explique pas leur origine. Sur les mêmes 122 heures, la météo seule atteint 0,23.</p>',
+      tags: ['R', 'tidyverse', 'API', 'Régression', 'Cartographie'],
+      projet: GH + 'prediction-pollution'
     },
     {
-      icon: "⚖️",
-      title: "Concentration des Marchés — Métaux Critiques",
-      desc: "Analyse de l'évolution de l'indice de Herfindahl-Hirschman (HHI) pour 5 métaux critiques (lithium, cobalt, nickel, cuivre, terres rares) sur la période 1994–2020. Étude de la concentration et des dynamiques de marché mondiales.",
-      results: `<strong>✔ Indice HHI :</strong> mesure standard de concentration de marché (utilisé par régulateurs)<br>
-                <strong>✔ Série temporelle :</strong> évolution sur 26 ans pour 5 métaux stratégiques<br>
-                <strong>✔ Enjeux réels :</strong> métaux critiques pour la transition énergétique<br>
-                <strong>✔ Rapport économique rédigé :</strong> analyse et interprétation des résultats`,
-      tags: ["R", "ggplot2", "dplyr", "readr", "Économie industrielle", "Visualisation"],
-      skills: "Analyse économique, visualisation de séries temporelles, interprétation d'indices de marché, rédaction de rapports.",
-      link: "https://github.com/marwane93600/projet-hhi-metaux"
+      img: 'sentiment', tag: 'NLP', titre: 'Analyse de Sentiment de Marché',
+      accroche: "Deux outils de NLP sur 97 articles : ils ne sont d'accord que sur 8.",
+      contexte: "Licence 3, comparaison ajoutée en 2026 avec l'aide d'une IA pour le code. Python, NewsAPI, TextBlob, Transformers, pytest.",
+      but: "Récupérer des articles économiques par API et en tirer un sentiment de marché, positif, neutre ou négatif, pour aider par exemple un trader à se faire un avis.",
+      probleme: "Un outil simple à base de règles comprend mal le français, et le ton d'un article est difficile à trancher.",
+      fait: ["Collecte d'articles par API", "Classification du ton de chaque titre et description avec TextBlob en français", "Export des résultats en CSV et tests pytest", "Comparaison avec un modèle français, DistilCamemBERT"],
+      resultat: "Sur 97 articles trouvés par une recherche sur « économie », TextBlob en met 80 en neutre. Le modèle français, entraîné sur des avis Amazon et Allociné, n'en met aucun et en classe 85 en positif. Ils ne sont d'accord que sur 8 articles. Je n'ai pas de classement humain fiable, car le ton est difficile à trancher même à la main : je ne peux donc pas dire lequel a raison. Ce que je retiens : un modèle ne se transpose pas à un autre type de texte sans validation.",
+      apercu: '<div class="ap-etapes"><div><b>97</b><span>articles sans doublon</span></div><div><b>8</b><span>où les deux outils sont d\'accord</span></div><div><b>9</b><span>où ils se contredisent</span></div></div><table class="ap-table"><thead><tr><th>Ton</th><th>TextBlob</th><th>DistilCamemBERT</th></tr></thead><tbody><tr><td>Neutre</td><td>80</td><td>0</td></tr><tr><td>Positif</td><td>8</td><td>85</td></tr><tr><td>Négatif</td><td>9</td><td>12</td></tr></tbody></table><p class="ap-note">Ce tableau mesure l\'écart entre les deux outils, pas lequel a raison.</p>',
+      tags: ['Python', 'NLP', 'TextBlob', 'Transformers', 'pytest'],
+      projet: GH + 'analyse-sentiment-marche'
     },
     {
-      icon: "🔬",
-      title: "Analyseur de Complexité de Code",
-      desc: "Outil d'analyse statique de code source en Python. Calcule automatiquement trois métriques de qualité logicielle : complexité cyclomatique (branches de décision), profondeur de nidification et nombre de lignes de code effectives.",
-      results: `<strong>✔ 3 métriques :</strong> complexité cyclomatique, nidification, lignes de code<br>
-                <strong>✔ Génération automatique :</strong> rapport texte détaillé par fichier analysé<br>
-                <strong>✔ Suggestions :</strong> recommandations d'amélioration du code<br>
-                <strong>✔ Rapport LaTeX :</strong> documentation complète du projet`,
-      tags: ["Python", "Analyse statique", "Génie logiciel", "Regex", "Automatisation"],
-      skills: "Génie logiciel, métriques de qualité de code, automatisation, compréhension des bonnes pratiques de développement.",
-      link: "https://github.com/marwane93600/Analyseur-de-Complexit-de-Code"
+      img: 'veille', tag: 'Automatisation', titre: "Outil de veille d'offres d'emploi",
+      accroche: '957 offres collectées pour trouver mon stage.',
+      contexte: "Projet personnel, repris avec l'aide d'une IA pour le code. Python, Flask, SQLite, API France Travail.",
+      but: "Ne plus rater d'offre de stage ou d'alternance, même quand elles sont publiées sur plusieurs sites.",
+      probleme: "Chaque site a son format, certains bloquent les robots, et il faut trier beaucoup d'offres peu pertinentes.",
+      fait: ["Collecte automatique des offres sur plusieurs sites", "Stockage dans une base SQLite", "Note de pertinence selon mon profil", "Tableau de bord pour suivre les offres et préparer les lettres", "Correction du classement après contrôle des résultats, avec des tests pytest"],
+      resultat: "957 offres collectées de mai à novembre 2026. En contrôlant les résultats, j'ai trouvé qu'un mot comme « avantages » était lu comme « stage » et que 124 offres plafonnaient à 100 %. Après correction, 153 offres ont changé de type de contrat et 10 restent à 100 %. J'ai choisi de ne pas automatiser l'envoi : les formulaires changent d'un site à l'autre et je préfère relire chaque candidature.",
+      apercu: barresH([['LinkedIn France', 383], ['France Travail', 235], ['Apec', 93], ['LinkedIn Canada', 64], ['LinkedIn Luxembourg', 49], ['LinkedIn Belgique', 48], ['HelloWork', 48], ['LinkedIn Suisse', 37]]) + '<p class="ap-note">D\'où viennent les 957 offres collectées.</p>',
+      tags: ['Python', 'SQLite', 'Flask', 'API'],
+      projet: null
+    },
+    {
+      img: 'code', tag: 'Programmation', titre: 'Analyseur de Complexité de Code',
+      accroche: 'Mesurer automatiquement du code, et voir où ça coince.',
+      contexte: "Première version à trois en L1 CMI, reprise en 2026 avec l'aide d'une IA pour le code. Python, ast, pytest.",
+      but: "Repérer automatiquement un programme trop compliqué dans des fichiers C ou Python.",
+      probleme: "Mesurer la structure d'un programme quand on ne lit que son texte.",
+      fait: ["Première version en groupe : lignes de code, complexité, imbrication et rapport", "Reprise en Python avec l'arbre syntaxique du module ast", "Reprise en C : commentaires et chaînes retirés, code découpé par fonction", "Suggestions qui nomment la fonction et la ligne à revoir", "12 tests automatiques avec pytest"],
+      resultat: "La première version comptait aussi les mots dans les commentaires et le texte, et ne voyait aucune imbrication en Python. La version 2 corrige ces deux points. Limites : en C, les macros ne sont pas analysées et un bloc sans accolades ne compte pas dans la profondeur.",
+      apercu: '<pre class="ap-code"><b>int</b> chercher(<b>int</b> t[], <b>int</b> n, <b>int</b> x) {\n  <b>for</b> (<b>int</b> i = 0; i &lt; n; i++) {\n    <b>if</b> (t[i] == x) {\n      <b>return</b> i;\n    }\n  }\n  <b>return</b> -1;\n}</pre><div class="ap-etapes"><div><b>8</b><span>lignes de code</span></div><div><b>3</b><span>complexité cyclomatique</span></div><div><b>2</b><span>profondeur d\'imbrication</span></div></div><table class="ap-table"><thead><tr><th>Version 2 sur mes fichiers</th><th>Lignes</th><th>Complexité max.</th><th>Profondeur max.</th></tr></thead><tbody><tr><td>tri.c</td><td>242</td><td>14</td><td>4</td></tr><tr><td>benchmark.c</td><td>39</td><td>6</td><td>1</td></tr><tr><td>plots.py</td><td>97</td><td>18</td><td>4</td></tr><tr><td>app.py</td><td>81</td><td>14</td><td>2</td></tr></tbody></table><p class="ap-note">L\'outil sur mes propres fichiers, mesuré fonction par fonction. La première version donnait 51 de complexité pour tri.c et 0 de profondeur pour plots.py.</p>',
+      tags: ['Python', 'ast', 'Analyse statique', 'pytest'],
+      projet: GH + 'Analyseur-de-Complexit-de-Code', rapport: GH + 'Analyseur-de-Complexit-de-Code/blob/main/report/Rapport.pdf'
+    },
+];
+
+  // Du projet le plus solide au moins complet ; la série Pollution & Immobilier reste groupée
+  const ORDRE = ['sience', 'spatial', 'did', 'air', 'immersio', 'veille', 'sentiment', 'code'];
+  projects.sort((a, b) => ORDRE.indexOf(a.img) - ORDRE.indexOf(b.img));
+  // Images de chaque fiche : [fichier, légende, fond blanc]
+  const VISUELS = {
+    sience: [['sience-accueil-net.jpg', "L'accueil : trois outils, le centre de commande, la base de données et la facturation, sur les mêmes données."], ['sience-floutee-centre.jpg', "Le centre de commande : les demandes, les factures, les montants et les alertes d'un coup d'œil."], ['sience-floutee-factures.jpg', "La facturation : chaque facture avec son montant récupéré, le net reversé, son statut et le PDF à générer."]],
+    sentiment: [['sentiment.jpg', '']],
+    spatial: [['spatial.jpg', ''], ['prix-territoire.jpg', "Le prix change d'abord selon le territoire : la simple distance est trompeuse, d'où le modèle causal de la partie 2.", true]],
+    did: [['tendances.jpg', "Les tendances des deux groupes : pour les comparer, il faut qu'ils évoluent de la même façon avant l'ouverture d'un site.", true], ['etude-evenement.jpg', "L'étude d'événement : après l'ouverture d'un site, les intervalles contiennent toujours zéro.", true]],
+    air: [['air.jpg', 'Le fait à expliquer : un pic net autour du 22 novembre, loin du niveau habituel.'], ['air-temperature.jpg', "Une piste d'explication : les concentrations montent quand il fait très froid.", true]],
+    code: [['code.jpg', '']],
+    veille: [['veille-offres-liste.jpg', "La liste : chaque offre avec sa source, son contrat, son lieu et son score."], ['veille-offres-detail.jpg', "Une offre ouverte : je prépare la lettre de motivation ou je l'ignore."]],
+    immersio: [['immersio.jpg', ''], ['immersio-planning.jpg', "Le calendrier : quatre phases et trois décisions du client pour poursuivre ou s'arrêter."], ['immersio-budget.jpg', 'Le budget : ce que chaque poste coûte, et pourquoi le total atteint 49,33 M€.']]
+  };
+  const NOTES_VISUELS = {
+    sience: "L'accueil ne montre aucune donnée. Les écrans suivants sont floutés, car l'application appartient à SIENCE. Ils ne contiennent que des données de démonstration.",
+    veille: "Le vrai outil, avec les noms des entreprises et le texte des offres masqués.",
+    immersio: "Diapositives de notre présentation finale de groupe."
+  };
+  const CARTES = { sience: 'carte-sience-floutee.jpg', air: 'carte-air.jpg', veille: 'carte-veille-offres.jpg' };
+  const FONDS_CARTE = { sentiment: 'linear-gradient(#48223b, #a2465b)' };
+  const COULEURS = { sience: ['#122A20', '#F4A340'], sentiment: ['#3A1C33', '#F2A0A8'], spatial: ['#0B2036', '#9BCDEE'], did: ['#2B2520', '#EF9A62'], air: ['#262C38', '#E6604E'], code: ['#12151C', '#F1BE4A'], veille: ['#332A5F', '#C4B4F2'], immersio: ['#042249', '#2BD0F7'] };
+
+  // ── Page d'un projet ──
+  function carrouselHTML(p) {
+    const v = VISUELS[p.img], n = v.length;
+    return '<div class="pj-car" id="pjCar"><div class="pj-car-cadre" id="pjCarCadre"><img id="pjCarImg" alt="">' +
+      '</div>' +
+      (n > 1 ? '<div class="pj-car-nav"><button type="button" class="pj-car-fl" id="pjCarAv" aria-label="Image précédente">←</button><div class="pj-car-points">' + v.map((_, k) => '<button type="button" data-k="' + k + '" aria-label="Image ' + (k + 1) + ' sur ' + n + '"></button>').join('') + '</div><button type="button" class="pj-car-fl" id="pjCarAp" aria-label="Image suivante">→</button></div>' : '') +
+      '<p class="pj-car-legende" id="pjCarLeg" aria-live="polite"></p>' + (NOTES_VISUELS[p.img] ? '<p class="ap-note">' + NOTES_VISUELS[p.img] + '</p>' : '') + '</div>';
+  }
+  let carAller = null;
+  function brancherCarrousel(p) {
+    const v = VISUELS[p.img], img = document.getElementById('pjCarImg'), cadre = document.getElementById('pjCarCadre'), leg = document.getElementById('pjCarLeg'), points = document.querySelectorAll('.pj-car-points button');
+    let k = 0;
+    const montrer = n => {
+      k = (n + v.length) % v.length;
+      img.src = 'images/' + v[k][0]; img.alt = v[k][1] || p.titre; leg.textContent = v[k][1];
+      cadre.classList.toggle('blanc', !!v[k][2]);
+      points.forEach((b, x) => b.setAttribute('aria-current', x === k));
+    };
+    points.forEach(b => b.addEventListener('click', () => montrer(+b.dataset.k)));
+    if (v.length > 1) {
+      document.getElementById('pjCarAv').addEventListener('click', () => montrer(k - 1));
+      document.getElementById('pjCarAp').addEventListener('click', () => montrer(k + 1));
+      v.forEach(x => { new Image().src = 'images/' + x[0]; });
     }
-  ];
-
-  // ── Ouvrir la modale ──
-  document.querySelectorAll('.project-card').forEach((card, i) => {
-    card.addEventListener('click', () => {
-      const p = projects[i];
-      document.getElementById('modalIcon').textContent = p.icon;
-      document.getElementById('modalTitle').textContent = p.title;
-      document.getElementById('modalDesc').textContent = p.desc;
-      document.getElementById('modalResults').innerHTML = p.results;
-      document.getElementById('modalSkills').textContent = p.skills;
-      const modalLinkEl = document.getElementById('modalLink');
-      if (p.link) {
-        modalLinkEl.href = p.link;
-        modalLinkEl.style.display = 'inline-flex';
-      } else {
-        modalLinkEl.style.display = 'none';
-      }
-
-      const tagsEl = document.getElementById('modalTags');
-      tagsEl.innerHTML = '';
-      p.tags.forEach(t => {
-        const span = document.createElement('span');
-        span.className = 'project-tag';
-        span.textContent = t;
-        tagsEl.appendChild(span);
-      });
-
-      document.getElementById('modalOverlay').classList.add('open');
-      document.body.style.overflow = 'hidden';
-    });
+    carAller = v.length > 1 ? d => montrer(k + d) : null;
+    montrer(0);
+  }
+  document.addEventListener('keydown', e => {
+    if (!document.getElementById('modalOverlay').classList.contains('open') || !carAller) return;
+    if (e.key === 'ArrowLeft') carAller(-1);
+    if (e.key === 'ArrowRight') carAller(1);
   });
+  function ouvrirProjet(p, retour) {
+    const i = projects.indexOf(p), suivant = projects[(i + 1) % projects.length];
+    const bloc = (t, x) => '<section class="pj-bloc"><h3>' + t + '</h3>' + x + '</section>';
+    const lien = (u, t, plein) => u ? '<a class="pj-btn' + (plein ? ' plein' : '') + '" href="' + u + '" target="_blank" rel="noopener">' + t + '</a>' : '';
+    const liens = lien(p.projet, 'Voir le projet', true) + lien(p.rapport, 'Lire le rapport');
+    const box = document.getElementById('modalBox');
+    document.getElementById('pjContenu').innerHTML =
+      '<header class="pj-tete"><div class="pj-titres"><i class="carte-tag">' + p.tag + '</i><h2 id="ficheTitre">' + p.titre + '</h2><p>' + p.accroche + '</p></div>' + carrouselHTML(p) + '</header>' +
+      '<div class="pj-grille"><div class="pj-recit"><div class="pj-duo">' + bloc('Le but', '<p>' + p.but + '</p>') + bloc('Le problème', '<p>' + p.probleme + '</p>') + '</div>' +
+      bloc(p.collectif ? 'Ce que nous avons fait' : "Ce que j'ai fait", '<ul>' + p.fait.map(x => '<li>' + x + '</li>').join('') + '</ul>') +
+      '<section class="pj-resultat"><h3>Le résultat</h3><p>' + p.resultat + '</p></section></div>' +
+      '<aside class="pj-infos"><h3>Contexte</h3><p>' + p.contexte + '</p><h3>Outils</h3><div class="pj-tags">' + p.tags.map(t => '<span>' + t + '</span>').join('') + '</div>' + (liens ? '<div class="pj-liens">' + liens + '</div>' : '') + '</aside></div>' +
+      (p.apercu ? '<section class="pj-visuel"><h3>En chiffres</h3><div class="pj-apercu">' + p.apercu + '</div></section>' : '') +
+      '<button type="button" class="pj-suivant" id="pjSuivant"><span>Projet suivant</span>' + suivant.titre + '</button>';
+    document.getElementById('pjSuivant').addEventListener('click', () => ouvrirProjet(suivant, retour));
+    brancherCarrousel(p);
+    document.getElementById('modalOverlay').classList.add('open');
+    box.scrollTop = 0;
+    document.body.style.overflow = 'hidden';
+    dernierBouton = retour;
+    document.querySelector('.pj-fermer').focus({ preventScroll: true });
+  }
+  let dernierBouton = null;
+
+  // ── Les projets apparaissent quand on les demande ──
+  const zoneProjets = document.getElementById('projets');
+  projects.forEach(function (p, i) {
+    const b = document.createElement('button'); b.type = 'button'; b.className = 'carte'; b.style.animationDelay = (i * 45) + 'ms';
+    b.innerHTML = '<span class="carte-image" style="background:' + (FONDS_CARTE[p.img] || COULEURS[p.img][0]) + '"><img src="images/' + (CARTES[p.img] || p.img + '.jpg') + '" alt="" data-img="' + p.img + '"></span><span class="carte-texte"><i class="carte-tag">' + p.tag + '</i><b>' + p.titre + '</b><small>' + p.accroche + '</small><span class="carte-fleche" aria-hidden="true">→</span></span>';
+    b.addEventListener('click', function () { ouvrirProjet(p, b); });
+    document.getElementById('cartes').appendChild(b);
+  });
+  function montrerProjets(ev) {
+    if (ev) ev.preventDefault();
+    const nav = document.querySelector('nav');
+    const cible = zoneProjets.querySelector('.section-title').getBoundingClientRect().top + window.scrollY - (nav ? nav.offsetHeight : 60) - 24;
+    window.scrollTo({ top: cible, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+    // Si le défilement doux n'aboutit pas, on y va directement
+    setTimeout(function () { if (Math.abs(window.scrollY - cible) > 40) { document.documentElement.style.scrollBehavior = 'auto'; window.scrollTo(0, cible); document.documentElement.style.scrollBehavior = ''; } }, 900);
+  }
+  document.querySelectorAll('#voirProjets, [data-projets]').forEach(function (l) { l.addEventListener('click', montrerProjets); });
 
   function closeModal(e) {
     if (e.target === document.getElementById('modalOverlay')) closeModalDirect();
   }
   function closeModalDirect() {
     document.getElementById('modalOverlay').classList.remove('open');
-    document.body.style.overflow = '';
+    document.body.style.overflow = ''; if (dernierBouton) dernierBouton.focus();
   }
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModalDirect(); });
 
@@ -1035,5 +1055,58 @@
   });
 </script>
 
+<script>
+/* Fond : courbes de niveau */
+(function () {
+  const cv = document.getElementById('fond'), ctx = cv.getContext('2d');
+  // Générateur fixe : le dessin reste le même à chaque visite
+  function hasard(g) { return function () { g |= 0; g = g + 0x6D2B79F5 | 0; let t = Math.imul(g ^ g >>> 15, 1 | g); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+  function champ(g) {
+    const r = hasard(g), n = 64, v = new Float32Array(n * n).map(() => r());
+    const lisse = t => t * t * (3 - 2 * t), at = (x, y) => v[((y % n + n) % n) * n + ((x % n + n) % n)];
+    const bruit = (x, y) => { const a = Math.floor(x), b = Math.floor(y), u = lisse(x - a), w = lisse(y - b); return (at(a, b) * (1 - u) + at(a + 1, b) * u) * (1 - w) + (at(a, b + 1) * (1 - u) + at(a + 1, b + 1) * u) * w; };
+    return (x, y) => (bruit(x, y) + bruit(x * 2.1, y * 2.1) * .5 + bruit(x * 4.3, y * 4.3) * .25) / 1.75;
+  }
+  // Le texte d'accueil reste lisible : le motif s'efface vers la gauche
+  function voile(W, H) {
+    if (W < 900) { ctx.fillStyle = 'rgba(14,16,32,.74)'; ctx.fillRect(0, 0, W, H); return; }
+    const g = ctx.createLinearGradient(0, 0, W, 0);
+    g.addColorStop(0, 'rgba(14,16,32,.94)'); g.addColorStop(.42, 'rgba(14,16,32,.72)'); g.addColorStop(.75, 'rgba(14,16,32,.08)'); g.addColorStop(1, 'rgba(14,16,32,0)');
+    ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
+  }
+  function courbes(W, H) {
+    const f = champ(7), pas = 9, e = 150, nx = Math.ceil(W / pas) + 1, ny = Math.ceil(H / pas) + 1, val = [];
+    for (let j = 0; j < ny; j++) { val[j] = []; for (let i = 0; i < nx; i++) val[j][i] = f(i * pas / e + 3, j * pas / e + 5); }
+    ctx.lineWidth = 1.1;
+    for (let k = 0; k < 18; k++) {
+      const seuil = .2 + k * .036, t = k / 17;
+      ctx.strokeStyle = 'rgba(' + Math.round(100 + 90 * t) + ',' + Math.round(85 + 70 * t) + ',' + Math.round(200 + 55 * t) + ',' + (.22 + .38 * t) + ')';
+      ctx.beginPath();
+      for (let j = 0; j < ny - 1; j++) for (let i = 0; i < nx - 1; i++) {
+        const a = val[j][i], b = val[j][i + 1], c = val[j + 1][i + 1], d = val[j + 1][i], x = i * pas, y = j * pas, p = [];
+        if ((a < seuil) !== (b < seuil)) p.push([x + pas * (seuil - a) / (b - a), y]);
+        if ((b < seuil) !== (c < seuil)) p.push([x + pas, y + pas * (seuil - b) / (c - b)]);
+        if ((d < seuil) !== (c < seuil)) p.push([x + pas * (seuil - d) / (c - d), y + pas]);
+        if ((a < seuil) !== (d < seuil)) p.push([x, y + pas * (seuil - a) / (d - a)]);
+        for (let q = 0; q + 1 < p.length; q += 2) { ctx.moveTo(p[q][0], p[q][1]); ctx.lineTo(p[q + 1][0], p[q + 1][1]); }
+      }
+      ctx.stroke();
+    }
+  }
+  let urlCourbes = null;
+  function dessiner() {
+    const W = innerWidth, H = innerHeight, d = Math.min(devicePixelRatio || 1, 2);
+    cv.width = W * d; cv.height = H * d; ctx.setTransform(d, 0, 0, d, 0, 0);
+    ctx.clearRect(0, 0, W, H); courbes(W, H); voile(W, H);
+    cv.toBlob(b => {
+      if (urlCourbes) URL.revokeObjectURL(urlCourbes);
+      urlCourbes = URL.createObjectURL(b);
+      document.getElementById('modalOverlay').style.setProperty('--courbes', 'url("' + urlCourbes + '")');
+    });
+  }
+  let attente; addEventListener('resize', () => { clearTimeout(attente); attente = setTimeout(dessiner, 150); });
+  dessiner();
+})();
+</script>
 </body>
 </html>
