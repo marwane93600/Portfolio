@@ -867,7 +867,7 @@
       resultat: "Un budget de 49,3 M€ hors risques et hors rémunération, estimé à 53,8 M€ risques compris, et quatre objectifs mesurables : au moins 2 fois moins de pannes qu'un site terrestre comparable, aucune eau douce consommée, le budget tenu et une mise en service au mois 36.",
       apercu: null,
       tags: ['Gestion de projet', 'Chiffrage', 'Planning', 'Risques'],
-      projet: 'presentations/IMMERSIO-rapport.pdf'
+      presentation: 'presentations/IMMERSIO-presentation.pdf', projet: null, rapport: 'presentations/IMMERSIO-rapport.pdf'
     },
     {
       img: 'spatial', tag: 'Géo-data', titre: 'Pollution & Immobilier : Analyse Spatiale (1/2)',
@@ -990,7 +990,7 @@
     const i = projects.indexOf(p), suivant = projects[(i + 1) % projects.length];
     const bloc = (t, x) => '<section class="pj-bloc"><h3>' + t + '</h3>' + x + '</section>';
     const lien = (u, t, plein) => u ? '<a class="pj-btn' + (plein ? ' plein' : '') + '" href="' + u + '" target="_blank" rel="noopener">' + t + '</a>' : '';
-    const liens = lien(p.projet, 'Voir le projet', true) + lien(p.rapport, 'Lire le rapport');
+    const liens = lien(p.presentation, 'Voir la présentation', true) + lien(p.projet, 'Voir le projet', true) + lien(p.rapport, 'Lire le rapport');
     const box = document.getElementById('modalBox');
     document.getElementById('pjContenu').innerHTML =
       '<header class="pj-tete"><div class="pj-titres"><i class="carte-tag">' + p.tag + '</i><h2 id="ficheTitre">' + p.titre + '</h2><p>' + p.accroche + '</p></div>' + carrouselHTML(p) + '</header>' +
